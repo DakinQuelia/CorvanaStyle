@@ -10,10 +10,10 @@ import GeneratorRadius from './components/generators/radius.js';
 
 /* Initialisation des scripts */
 const body = document.querySelector("body");
-const buttonLigth = document.querySelector('.switch-theme button[data-theme="light"]');
-const buttonDark = document.querySelector('.switch-theme button[data-theme="dark"]');
+const buttonLigth = document?.querySelector('.switch-theme button[data-theme="light"]');
+const buttonDark = document?.querySelector('.switch-theme button[data-theme="dark"]');
 
-buttonLigth.addEventListener('click', () => 
+buttonLigth?.addEventListener('click', () => 
 {
     if (body.classList.contains("dark"))
     {
@@ -23,7 +23,7 @@ buttonLigth.addEventListener('click', () =>
     body.classList.add('light');
 });
 
-buttonDark.addEventListener('click', () => 
+buttonDark?.addEventListener('click', () => 
 {
     if (body.classList.contains("light"))
     {
