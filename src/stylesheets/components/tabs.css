@@ -1,0 +1,145 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : components/tabs.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.tabs {
+    @apply p-[10px];
+
+    & .nav-tabs  {
+        @apply relative flex flex-wrap gap-[10px] w-full select-none mb-0;
+
+        & .nav-item {
+            @apply relative flex items-center p-[5px_15px] z-100 top-[-4px] ;
+
+            &:hover,
+            &.active {
+                @apply relative bg-white rounded-t-md border-t-1 border-r-1 border-l-1 border-forms-border border-b-1 border-b-transparent bottom-[2px];
+            }
+
+            & [class^="icon-"],
+            & ion-icon,
+            & i {
+                @apply mr-[5px] text-xl;
+            }
+
+            & .icon {
+                @apply w-[20px] h-[20px] mr-[5px];
+            }
+
+            &.disabled {
+                @apply pointer-events-none cursor-default text-(--tabs-nav-link-disabled-color);
+            }
+
+            & span {
+                @apply flex items-center;
+            }
+       }
+    }
+    
+    & > .tabs-content {
+        @apply flex flex-col rounded-md rounded-b-md rounded-tr-md border-1 border-forms-border mt-[-5px];
+
+        &.first-tab {
+            @apply rounded-tl-none;
+        }
+    
+        & .tab-content {
+            @apply py-[15px] px-[15px];
+    
+            &.active {
+                @apply flex flex-col;
+            }
+    
+            & p {
+                @apply my-2;
+            }
+    
+            & p:last-child {
+                @apply my-0;
+            }
+        }
+    }
+    
+    & input:checked + label + .tabs-content .tab-content {
+        @apply flex flex-col!;
+    }
+}
+
+.tabs .nav a.active ~ .tabs:has(.tabs-content:not(:first-child)) {
+    @apply rounded-tl-md;
+}
+
+/**
+*   Onglets sans fond ni contour
+**/
+.tabs-noborder {
+    & .nav-tabs {
+        @apply relative flex flex-wrap gap-[40px] w-full border-b-2 border-b-forms-border pb-[10px] select-none;
+
+        & input { 
+            @apply hidden;
+
+            &:checked + label {
+                @apply relative border-b-2 border-theme;
+            }
+        }
+
+        & label {
+            @apply relative cursor-pointer font-normal flex items-center pb-[10px] select-none;
+        }
+
+        & li,
+        & a {
+            @apply relative cursor-pointer flex items-center font-medium text-lg mt-[12px] focus:outline-0;
+
+            & [class^="icon-"],
+            & ion-icon,
+            & i {
+                @apply mr-[5px] text-xl;
+            }
+
+            & span {
+                @apply flex items-center;
+            }
+            
+            &:hover,
+            &.active {
+                @apply relative border-b-2 border-theme mt-[2px] mb-[-12px];
+            }
+        }
+    }
+
+    & input:checked + label + .tabs-content .tab-content {
+        @apply flex flex-col!;
+    }
+}
+
+.tabs-noborder .tabs-content {
+    @apply flex flex-col;
+
+    & .tab-content {
+        @apply py-[20px] px-0;
+
+        &.active {
+            @apply flex flex-col;
+        }
+
+        & p {
+            @apply my-2;
+        }
+
+        & p:last-child {
+            @apply my-0;
+        }
+    }
+}
+
+/**
+*   Onglets verticaux
+**/
+.vertical-tabs {
+    @apply content-start items-end border-0 border-r-1 border-forms-border grid gap-0 py-[12px] px-0;
+}

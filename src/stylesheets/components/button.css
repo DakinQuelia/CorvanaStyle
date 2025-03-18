@@ -1,0 +1,193 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/button.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.button-primary { 
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-lg);    
+    background-color: var(--color-primary);    
+    padding-inline: --spacing(3);    
+    padding-block: --spacing(1);    
+    font-weight: var(--font-weight-semibold);    
+    color: var(--color-white);   
+    box-shadow: var(--shadow-md);    
+    
+    &:hover {      
+        @media (hover: hover) { 
+            background-color: var(--color-blue-700);      
+        }    
+    }  
+}
+
+.button-success {    
+    border-radius: var(--radius-lg);    
+    background-color: var(--color-green-500);    
+    padding-inline: --spacing(3);    
+    padding-block: --spacing(1);    
+    font-weight: var(--font-weight-semibold);    
+    color: var(--color-white);   
+    box-shadow: var(--shadow-md);    
+    
+    &:hover {      
+        @media (hover: hover) { 
+            background-color: var(--color-green-700);      
+        }    
+    }  
+}
+
+/**
+*   Bouton : phpBB
+**/
+.button-phpbb {
+    @apply select-none cursor-pointer flex items-center justify-center w-max bg-[#E9E9E9] bg-linear-to-b from-0% from-[#FFFFFF] to-100% to-[#E9E9E9] border-1 border-[#C7C3BF] rounded-md shadow-(--button-phpbb-shadow) font-(family-name:--font-open) leading-[1.4] font-semibold text-theme;
+
+    &:hover {
+        @apply border-theme bg-white bg-linear-to-b from-0% from-[#E9E9E9] to-100% to-[#FFFFFF] text-shadow-[1px_1px_0_#FFFFFF,-1px_-1px_0_#FFFFFF,-1px_-1px_0_rgba(188,42,77,0.2)];
+    }
+
+    & i,
+    & ion-icon,
+    & svg {
+        @apply -ml-1 pl-[-12px];
+    }
+
+    & .icon.icon-only {
+        @apply ml-0;
+    }
+
+    &.danger,
+    &.error {
+        @apply text-[#D31141];
+    }
+}
+
+/**
+*   Bouton
+**/
+button,
+.button {
+    @apply cursor-pointer flex items-center bg-theme dark:bg-gray-800 rounded-sm text-white py-[5px] pt-[2px] px-[10px] hover:bg-hover dark:hover:bg-dark-hover;
+
+    & i,
+    & ion-icon,
+    & .icon {
+        @apply mr-[5px] pt-[2px];
+    }
+
+    & .icon.icon-only {
+        @apply mr-0;
+    }
+}
+
+button#close i,
+button#close svg,
+button#close .icon,
+button#close ion-icon,
+.button#close i,
+.button#close svg,
+.button#close .icon,
+.button#close ion-icon
+.button.close i,
+.button.close svg,
+.button.close .icon,
+.button.close ion-icon {
+    @apply pt-0!;
+}
+
+/**
+*   Bouton : type 1
+**/
+.btn {
+    @apply cursor-pointer rounded-[7px] bg-primary text-white hover:bg-hover p-1 dark:bg-gray-600 px-3 py-1 font-semibold;
+
+    &.icon-only {
+        @apply rounded-full flex items-center justify-center w-[32px] h-[32px] px-0 py-0;
+    }
+
+    &.btn-sm {
+        @apply rounded-[7px] text-sm;
+    }
+}
+
+/**
+*   Bouton : Réponse marquée
+**/
+.social-mark-answer {
+    @apply appearance-none flex items-center w-max border-1 border-[#d1d9e0] rounded-[100px] p-[2px_12px_5px_5px];
+
+    &.success {
+        @apply bg-[#dafbe1] text-[#1a7f37] border-[#388603];
+    }
+
+    &.error {
+        @apply bg-[#fbdada] text-[#7f1a1a] border-[#860303];
+    }
+}
+
+/**
+*   Bouton : téléchargement
+**/
+.button-download {
+    @apply select-none cursor-pointer relative block w-[250px] min-h-[59px] rounded-lg mb-[5px] p-[15px] text-[0.85em] shadow-md bg-theme bg-linear-(--button-download-gradient);
+
+    &:hover,
+    &:focus {
+        @apply bg-none bg-theme/80!;
+    }
+
+    &::before {
+        @apply absolute block h-[72px] w-[69px] right-[-10px] top-[-12.7px] content-(--icon-arrow) mask-image-(--icon-arrow) mask-norepeat mask-size-[100%_100%] shadow-md;
+    }
+
+    &.green {
+        @apply bg-[#95b178] bg-linear-to-b from-0% from-[#95b178] to-[#b1d28e] to-100%;
+
+        &:hover,
+        &:focus {
+            @apply bg-none bg-[#95b178]/80!;
+        }
+    }
+
+    &.blue {
+        @apply bg-[#698cc0] bg-linear-to-b from-0% from-[#698cc0] to-[#7ca7e4] to-100%;
+
+        &:hover,
+        &:focus {
+            @apply bg-none bg-[#698cc0]/80!;
+        }
+    }
+
+    &.orange {
+        @apply bg-[#ffc561] bg-linear-45 from-0% from-[#ffc561] to-[#ff8a2b] to-100%;
+
+        &:hover,
+        &:focus {
+            @apply bg-none bg-[#ffc561]/80!;
+        }
+    }
+
+    &.red {
+        @apply bg-[#9e1010] bg-linear-45 from-0% from-[#9e1010] to-[#ff0101] to-100%;
+
+        &:hover,
+        &:focus {
+            @apply bg-none bg-[#9e1010]/80!;
+        }
+    }
+
+    & .download-title {
+        @apply relative uppercase text-[0.85em] font-bold text-white text-shadow-sm mb-2;
+    }
+
+    & .download-link {
+        @apply block font-semibold text-white text-xs pr-[40px] decoration-0 drop-shadow-(--button-download-text-shadow) text-shadow-sm;
+
+        & a {
+            @apply dark:hover:text-white;
+        }
+    }
+}

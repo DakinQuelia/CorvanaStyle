@@ -1,0 +1,48 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : style.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
+@import "./_fonts.css";
+@import "./_variables.css";
+@import "./global.css";
+
+@import "./utilities/global.css";
+@import "./utilities/grid.css";
+@import "./utilities/cards.css";
+@import "./utilities/mask.css";
+@import "./utilities/textshadow.css";
+
+@import "./components/icons.css";
+@import "./components/animations.css";
+@import "./components/navigation.css";
+@import "./components/dropdown.css";
+@import "./components/alert.css";
+@import "./components/tooltip.css";
+@import "./components/popover.css";
+@import "./components/forms.css";
+@import "./components/button.css";
+@import "./components/tabs.css";
+@import "./components/modal.css";
+@import "./components/badge.css";
+@import "./components/card.css";
+@import "./components/editor.css";
+@import "./components/login.css";
+@import "./components/notification.css";
+@import "./components/table.css";
+@import "./components/bbcodes.css";
+@import "./components/timeline.css";
+
+@import "./layouts/base.css";
+@import "./layouts/admin.css";
+@import "./layouts/doc.css";
+@import "./layouts/discord.css";
+@import "./layouts/support.css";
+@import "./layouts/invoice.css";
+@import "./layouts/shop.css";
+@import "./layouts/generator.css";

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvana Style :: Boutons</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body class="base">
+    <section>
+        <div class="container grid grid-cols-2 w-full mt-[50px]">
+            <div class="grid-cols-1">
+                <!-- Groupe de boutons -->
+                <h1 class="mt-[50px] mb-[10px]">Groupe de boutons</h1>
+                <div class="buttons-group light" style="width: 330px">
+                    <button aria-label="Gras" title="Gras">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:bold"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button aria-label="Mettre en italique" title="Mettre en italique">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:italic"></use>
+                        </svg>                                                                    
+                    </button>
+                    <!-- -->
+                    <button aria-label="Souligner" title="Souligner">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:underline"></use>
+                        </svg>                                                                    
+                    </button>
+                    <div class="buttons-group-divider"></div>
+                    <button class="button" aria-label="Texte aligné à gauche" title="Texte aligné à gauche">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:text-left"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button class="button" aria-label="Texte centré" title="Texte centré">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:text-center"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button class="button" aria-label="Texte aligné à droite" title="Texte aligné à droite">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:text-right"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button class="button" aria-label="Justifier le texte" title="Justifier le texte">
+                        <svg class="icon icon-only" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:text-justify"></use>
+                        </svg>                                                                    
+                    </button>
+                </div>
+
+                <div class="buttons-group" style="width: 100px; margin-top: 30px;">
+                    <button aria-label="Gras" title="Gras">Gras</button>
+                    <button aria-label="Italique" title="Italique">Italique</button>
+                    <button aria-label="Souligner" title="Souligner">Souligner</button>
+                </div>
+                <!-- Fin -->
+
+                <!-- Boutons :: Formulaire -->
+                <h1 class="mt-[50px] mb-[10px]">Boutons de formulaire</h1>
+                <form action="" class="inline-flex gap-[10px]">
+                    <button aria-label="Gras" title="Gras">
+                        <svg width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:bold"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button aria-label="Mettre en italique" title="Mettre en italique">
+                        <svg width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:italic"></use>
+                        </svg>                                                                    
+                    </button>
+                    <button aria-label="Souligner"> 
+                        <svg width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#editor:underline"></use>
+                        </svg>  
+                    </button>
+                    <button aria-label="Soumettre">
+                        <svg class="icon" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#mdi:check-bold"></use>
+                        </svg>  Envoyer
+                    </button>
+                    <button class="bg-red-700! hover:bg-red-700/70!" aria-label="Soumettre">Supprimer</button>
+                </form>
+                <!-- Fin -->
+                
+                <!-- Boutons :: Thème -->
+                <h1 class="mt-[50px] mb-[10px]">Menus déroulants</h1>
+                <button class="button-dropdown w-[40px]! h-[30px]!">
+                    <svg class="icon icon-only" width="24" height="24">
+                        <use href="../assets/images/icons/sprite.svg?logo#editor:more"></use>
+                    </svg>    
+                </button>
+                <!-- Fin -->
+
+                <!-- Boutons :: phpBB -->
+                <h1 class="mt-[50px] mb-[10px]">Divers boutons</h1>
+                <div class="flex flex-col gap-[10px]">
+                    <button class="button-phpbb">Envoyer</button>
+                    <div class="flex gap-[10px]">
+                        <button class="button-phpbb">
+                            <svg class="icon icon-only" width="24" height="24">
+                                <use href="../assets/images/icons/sprite.svg?logo#mdi:check-bold"></use>
+                            </svg> 
+                        </button>
+                        <button class="button-phpbb">
+                            <svg class="icon icon-only" width="24" height="24">
+                                <use href="../assets/images/icons/sprite.svg?logo#close"></use>
+                            </svg> 
+                        </button>
+                    </div>
+                    <button class="button-phpbb"> 
+                        <svg class="icon" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#mdi:check-bold"></use>
+                        </svg>  
+                        Envoyer
+                    </button>
+                </div>
+                <!-- Fin -->
+            </div>
+            <div class="grid-cols-1">
+                <!-- Boutons : autres -->
+                <h1 class="mt-[50px] mb-[10px]">Autres boutons</h1>
+                <div class="mt-5 flex flex-col gap-[10px]">
+                    <button class="social-mark-answer success">
+                        <svg class="icon" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#check-circle"></use>
+                        </svg> 
+                        Marquer comme réponse 
+                    </button>
+                    <button class="social-mark-answer error">
+                        <svg class="icon" width="24" height="24">
+                            <use href="../assets/images/icons/sprite.svg?logo#cross-circle"></use>
+                        </svg> 
+                        Marquer comme réponse 
+                    </button>
+                </div>
+                <!-- Fin -->
+
+                <!-- Boutons : Téléchargement -->
+                <h1 class="mt-[50px] mb-[10px]">Boutons de téléchargement</h1>
+                <div class="flex w-full gap-[10px]">
+                    <div class="flex flex-col gap-[10px]">
+                        <h2>Bouton par défaut</h2>
+                        <div class="button-download">
+                            <div class="download-title">Télécharger Pack de langue</div>
+                            <div class="download-link">
+                                <a href="#">Télécharger le pack de langue et images dans votre langue</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-[10px]">
+                        <h2>Boutons colorés</h2>
+                        <div class="button-download green">
+                            <div class="download-title">Télécharger Pack de langue</div>
+                            <div class="download-link">
+                                <a href="#">Télécharger le pack de langue et images dans votre langue</a>
+                            </div>
+                        </div>
+                        <div class="button-download blue">
+                            <div class="download-title">Télécharger Pack de langue</div>
+                            <div class="download-link">
+                                <a href="#">Télécharger le pack de langue et images dans votre langue</a>
+                            </div>
+                        </div>
+                        <div class="button-download orange">
+                            <div class="download-title">Télécharger Pack de langue</div>
+                            <div class="download-link">
+                                <a href="#">Télécharger le pack de langue et images dans votre langue</a>
+                            </div>
+                        </div>
+                        <div class="button-download red">
+                            <div class="download-title">Télécharger Pack de langue</div>
+                            <div class="download-link">
+                                <a href="#">Télécharger le pack de langue et images dans votre langue</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>

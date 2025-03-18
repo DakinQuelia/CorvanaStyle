@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvana Style :: Modales</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body>
+    <section>
+        <!-- Modal :: Sans header / footer -->
+        <div class="modal-overlay hidden!" >
+            <div class="modal lg noheader" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="modal-close">
+                    <button>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <form class="mt-[15px]">
+                        <div class="field">
+                            <div class="col-left">
+                                <label for="username">Nom d'utilisateur</label>
+                            </div>
+                            <div class="col-right">
+                                <input type="text" value="" placeholder="Nom d'utilisateur" name="username" id="username" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="col-left">
+                                <label for="email">Courriel</label>
+                            </div>
+                            <div class="col-right">
+                                <input type="email" value="" placeholder="Adresse courriel" name="email" id="email" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="col-left">
+                                <label for="message">Message</label>
+                            </div>
+                            <div class="col-right">
+                                <textarea type="message" placeholder="Message" name="message" id="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" id="submit" name="submit">Valider</button>
+                            <button type="reset" id="reset" name="reset">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal :: Test -->
+        <div class="modal-overlay hidden!">
+            <div class="modal lg" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="modal-header">
+                    <h4 class="modal-title">Titre de la fenêtre</h4>
+                    <div class="modal-buttons-group">
+                        <button>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <div class="col-full">
+                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ullam similique, eos unde, voluptas quo reiciendis necessitatibus dicta, corrupti expedita perferendis ipsum. Non temporibus, quasi harum iste perferendis deserunt reiciendis.</p>
+                        <p class="text-justify">Voluptatibus et sunt eveniet explicabo eaque ipsa distinctio, provident minus omnis. Quos dolorem possimus suscipit, corporis perspiciatis obcaecati quod dolores quam beatae dolore fugit minus, quo quasi id nostrum ea.</p>
+                        <p class="text-justify">Asperiores voluptas accusantium ex, magnam iusto veniam molestiae a dolorem! Ea at, dolorem aperiam, ipsum distinctio, voluptate officiis porro amet architecto hic veniam quia atque placeat! Debitis tenetur velit molestias.</p>
+                        
+                        <form class="mt-[15px]">
+                            <div class="field">
+                                <div class="col-left">
+                                    <label for="username">Nom d'utilisateur</label>
+                                </div>
+                                <div class="col-right">
+                                    <input type="text" value="" placeholder="Nom d'utilisateur" name="username" id="username" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="col-left">
+                                    <label for="email">Courriel</label>
+                                </div>
+                                <div class="col-right">
+                                    <input type="email" value="" placeholder="Adresse courriel" name="email" id="email" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="col-left">
+                                    <label for="message">Message</label>
+                                </div>
+                                <div class="col-right">
+                                    <textarea type="message" placeholder="Message" name="message" id="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button type="button" id="submit" name="submit">Valider</button>
+                                <button type="reset" id="reset" name="reset">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="uppercase ml-auto">Fermer</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal :: Paramètres -->
+        <div class="modal-overlay hidden!">
+            <div class="modal lg" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="modal-header">
+                    <h4 class="modal-title">Exportation</h4>
+                    <div class="buttons-group">
+                        <button class="close">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <form action="">
+                        <div class="tabs-noborder">
+                            <corvana-tabs class="nav-tabs">
+                                <a href="#help" aria-selected="true">
+                                    <span><ion-icon name="alert-circle-outline"></ion-icon> Infos</span>
+                                </a>
+                                <a href="#svg">
+                                    <span>SVG</span>
+                                </a>
+                                <a href="#png">
+                                    <span>PNG</span>
+                                </a>
+                                <a href="#pdf">
+                                    <span>PDF</span>
+                                </a>
+                                <a href="#font">
+                                    <span>Police d'icône</span>
+                                </a>
+                                <a href="#json">
+                                    <span>JSON</span>
+                                </a>
+                                <a href="#jsx">
+                                    <span>JSX</spa>
+                                </a>
+                                <a href="#vue">
+                                    <span>Vue</span>
+                                </a>
+                            </corvana-tabs>
+                            <div class="tabs-content">
+                                <div class="tab-content" id="help" role="tabpanel">
+                                    <div class="alert success">
+                                        <span>
+                                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                                        </span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit at vitae itaque quis iste alias cumque recusandae eum quasi, architecto quo ex harum earum odit unde dolores reiciendis ratione delectus.</p>
+                                    </div>
+                                    <p>Delectus possimus labore cupiditate consequuntur odit. Provident dolorum asperiores aut deleniti modi totam maiores quas tempore iusto qui corporis molestias atque, sequi natus ratione veniam? Culpa iste voluptate saepe enim.</p>
+                                    <div class="alert warning">
+                                        <span>
+                                            <ion-icon name="warning-outline"></ion-icon>
+                                        </span>
+                                        <p class="text-justify">Quisquam nam dolore quos ratione amet officiis? Eum, quae possimus! Assumenda eaque vel adipisci quidem dolor, illo iusto fugit esse distinctio natus ab odit corrupti cumque illum ipsum doloremque veniam.</p>
+                                    </div>
+                                    <p>Et iure repellendus quam, cum earum quia ab sed totam beatae voluptatum dicta quasi temporibus atque dolorum excepturi voluptatem quibusdam officia alias. Itaque maiores culpa vel. Assumenda laborum architecto placeat.</p>
+                                </div>
+                                <div class="tab-content" id="svg">
+                                    <div class="field">
+                                        <input type="radio" name="svg" id="svg" /> Fichier SVG
+                                        <input type="radio" name="svg" id="svg" /> Sprite SVG
+                                        <input type="radio" name="svg" id="svg" /> Symbole SVG
+                                    </div>
+                                    <fieldset>
+                                        <legend>Général</legend>
+                                        <div>
+                                            <div class="field">
+                                                <div class="col-left">
+                                                    <label for="test">Classe de base</label>
+                                                </div>
+                                                <div class="col-right">
+                                                    <input type="text" name="test" id="test" placeholder="icon" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="col-left">
+                                                    <label for="test">Préfixe de l'icône</label>
+                                                </div>
+                                                <div class="col-right">
+                                                    <input type="text" name="test" id="test" placeholder="icon-" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    
+                                    <fieldset>
+                                        <legend>Options avancées</legend>
+                                        <div class="col-full">
+                                            <div class="field">
+                                                <input type="checkbox" name="reference" id="reference" /> Utiliser une référence externe pour l'élément <strong>&lsaquo;use&rsaquo;</strong>
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmval" id="rmval" /> Supprimer les valeurs de stroke-width
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmtitle" id="rmtitle" /> Supprimer le titre
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmtitle" id="rmtitle" /> Utiliser les propriétés CSS personnalisées
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="tab-content" id="png">
+                                    Format PNG
+                                </div>
+                                <div class="tab-content" id="pdf">
+                                    Format PDF
+                                </div>
+                                <div class="tab-content" id="font">
+                                    Police d'icône
+                                </div>
+                                <div class="tab-content" id="json">
+                                    Format JSON
+                                </div>
+                                <div class="tab-content" id="jsx">
+                                    Composant JSX
+                                </div>
+                                <div class="tab-content" id="vue">
+                                    <h2>Composant Vue</h2> 
+                                    <div class="alert error">
+                                        <span>
+                                            <ion-icon name="bug-outline"></ion-icon>
+                                        </span>
+                                        <p class="text-justify">Mollitia aperiam tenetur, nobis enim cumque sunt quas vero recusandae, cum ullam minima placeat, eaque ad! Suscipit asperiores nulla ab modi rerum nemo consequatur ut. Natus odit impedit soluta est.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button type="button">
+                                    <ion-icon name="checkmark-outline"></ion-icon>
+                                    <span>Valider</span>
+                                </button>
+                                <button type="button">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                    <span>Annuler</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="uppercase" style="display: none;">Exporter les icônes</button>
+                    <button class="uppercase ml-auto">Fermer</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autre modale -->
+        <div class="modal-overlay ">
+            <div class="modal xl" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="modal-header">
+                    <h4 class="modal-title">Exportation</h4>
+                    <div class="modal-buttons-group">
+                        <button class="close">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <form action="">
+                        <div class="tabs">
+                            <corvana-tabs class="nav-tabs">
+                                <a href="#tab0" class="nav-item" aria-selected="true">
+                                    <span><span class="icon-[mdi--information-outline]"></span> Aide</span>
+                                </a>
+                                <a href="#tab1" class="nav-item">
+                                    <span><span class="icon mdi:svg"></span> SVG</span>
+                                </a>
+                                <a href="#tab2" class="nav-item">
+                                    <span><span class="icon mdi:png"></span>PNG</span>
+                                </a>
+                                <a href="#tab3" class="nav-item">
+                                    <span><span class="icon mdi:font-icon"></span>Police d'icône</span>
+                                </a>
+                                <a href="#tab4" class="nav-item">
+                                    <span><span class="icon mdi:json"></span>JSON</span>
+                                </a>
+                                <a href="#tab5" class="nav-item">
+                                    <span><span class="icon mdi:js"></span>JSX</spa>
+                                </a>
+                                <a href="#tab6" class="nav-item">
+                                    <span><span class="icon mdi:vue-js"></span>Vue</span>
+                                </a>
+                            </corvana-tabs>
+                            <div class="tabs-content">
+                                <div class="tab-content" id="tab0" role="tabpanel">
+                                    <div class="alert success">
+                                        <span>
+                                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                                        </span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit at vitae itaque quis iste alias cumque recusandae eum quasi, architecto quo ex harum earum odit unde dolores reiciendis ratione delectus.</p>
+                                    </div>
+                                    <p>Delectus possimus labore cupiditate consequuntur odit. Provident dolorum asperiores aut deleniti modi totam maiores quas tempore iusto qui corporis molestias atque, sequi natus ratione veniam? Culpa iste voluptate saepe enim.</p>
+                                    <div class="alert warning">
+                                        <span>
+                                            <ion-icon name="warning-outline"></ion-icon>
+                                        </span>
+                                        <p class="text-justify">Quisquam nam dolore quos ratione amet officiis? Eum, quae possimus! Assumenda eaque vel adipisci quidem dolor, illo iusto fugit esse distinctio natus ab odit corrupti cumque illum ipsum doloremque veniam.</p>
+                                    </div>
+                                    <p>Et iure repellendus quam, cum earum quia ab sed totam beatae voluptatum dicta quasi temporibus atque dolorum excepturi voluptatem quibusdam officia alias. Itaque maiores culpa vel. Assumenda laborum architecto placeat.</p>
+                                </div>
+                                <div class="tab-content" id="tab1">
+                                    <div class="field">
+                                        <input type="radio" name="svg" id="svg" /> Fichier SVG
+                                        <input type="radio" name="svg" id="svg" /> Sprite SVG
+                                        <input type="radio" name="svg" id="svg" /> Symbole SVG
+                                    </div>
+                                    <fieldset>
+                                        <legend>Général</legend>
+                                        <div>
+                                            <div class="field">
+                                                <div class="col-left">
+                                                    <label for="test">Classe de base</label>
+                                                </div>
+                                                <div class="col-right">
+                                                    <input type="text" name="test" id="test" placeholder="icon" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="col-left">
+                                                    <label for="test">Préfixe de l'icône</label>
+                                                </div>
+                                                <div class="col-right">
+                                                    <input type="text" name="test" id="test" placeholder="icon-" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    
+                                    <fieldset>
+                                        <legend>Options avancées</legend>
+                                        <div class="col-full">
+                                            <div class="field">
+                                                <input type="checkbox" name="reference" id="reference" /> Utiliser une référence externe pour l'élément <span style="margin-right: 5px"></span><strong>&lsaquo;use&rsaquo;</strong>
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmval" id="rmval" /> Supprimer les valeurs de stroke-width
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmtitle" id="rmtitle" /> Supprimer le titre
+                                            </div>
+                                            <div class="field">
+                                                <input type="checkbox" name="rmtitle" id="rmtitle" /> Utiliser les propriétés CSS personnalisées
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="tab-content" id="tab2">
+                                    Format PNG
+                                </div>
+                                <div class="tab-content" id="tab3">
+                                    Police d'icône
+                                </div>
+                                <div class="tab-content" id="tab4">
+                                    Format JSON
+                                </div>
+                                <div class="tab-content" id="tab5">
+                                    Composant JSX
+                                </div>
+                                <div class="tab-content" id="tab6">
+                                    <h2>Composant Vue</h2> 
+                                    <div class="alert error">
+                                        <span>
+                                            <ion-icon name="bug-outline"></ion-icon>
+                                        </span>
+                                        <p class="text-justify">Mollitia aperiam tenetur, nobis enim cumque sunt quas vero recusandae, cum ullam minima placeat, eaque ad! Suscipit asperiores nulla ab modi rerum nemo consequatur ut. Natus odit impedit soluta est.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="uppercase ml-auto">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="../assets/javascripts/app.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>

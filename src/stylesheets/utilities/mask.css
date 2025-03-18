@@ -1,0 +1,18 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : utilities/mask.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@utility mask-image-* {
+    mask-image: --value([*]);
+}
+
+@utility mask-norepeat {
+    mask-repeat: no-repeat;
+}
+
+@utility mask-size-* {
+    mask-size: --value([*]);
+}

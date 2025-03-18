@@ -1,0 +1,112 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : components/modal.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.modal-overlay {
+    @apply fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-overlay z-99999;
+}
+
+.modal .modal-close {
+    @apply absolute flex justify-end top-[12px] right-[12px] z-1;
+}
+
+.modal button {
+    @apply cursor-pointer border-0 flex items-center justify-center bg-theme dark:bg-gray-800 p-[4px] rounded-md text-white transition-all duration-300;
+
+    &.close {
+        @apply rounded-[50%];
+    }
+
+    &:hover {
+        @apply hover:bg-hover dark:hover:bg-dark-hover;
+    }
+}
+
+.modal {
+    @apply relative bg-white dark:bg-dark-theme rounded-[8px] pt-0;
+
+    &.md {
+        @apply w-[800px] h-[550px];
+    } 
+
+    &.lg {
+        @apply w-[800px] h-auto;
+    }
+
+    &.xl {
+        @apply w-[950px] h-auto; 
+    }
+
+    &.noheader .modal-content {
+        @apply p-[32px]!;
+    }
+}
+
+.modal .modal-title {
+    @apply flex-1 mt-0 mb-0 mr-auto font-medium text-[14px] block text-p uppercase leading-[20px] text-left;
+}
+
+.modal .modal-header {
+    @apply flex items-start justify-between p-[1rem] border-b-1 border-b-modal-border;
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        @apply font-bold;
+    }
+
+    & .modal-buttons-group {
+        @apply min-h-[32px] mt-[-7px] mb-[-12px] mr-[-5px] flex items-center content-center flex-row;
+
+        & i,
+        & ion-icon,
+        & .icon {
+            @apply mr-0;
+        }
+    }
+}
+
+.modal .modal-footer {
+    @apply flex flex-wrap items-center justify-end py-[6px] px-[10px] border-t-1 border-t-modal-border;
+
+    & button {
+        @apply cursor-pointer bg-[transparent] hover:bg-hover-2 text-theme py-[8px] px-[16px] rounded-[1000px] font-medium;
+
+        transition: opacity .15s ease, background-color .15s ease, box-shadow .15s ease;
+    }
+}
+
+.modal .modal-content {
+    @apply flex h-full flex-row text-left p-[16px_32px_32px_32px] text-p dark:text-dark-p overflow-y-auto;
+
+    & .col-1,
+    & .col-2 {
+        @apply flex flex-col h-full; 
+    }
+
+    & .col-1 {
+        @apply max-w-[300px] w-full pr-[24px] gap-[20px];
+    }
+
+    & .col-2 {
+        @apply  w-full pr-[24px];
+
+        & p {
+            @apply mt-0;
+        }
+    }
+
+    & .col-full {
+        @apply w-full;
+    }
+
+    & .buttons {
+        @apply flex mb-[-15px] ml-auto;
+    }
+}

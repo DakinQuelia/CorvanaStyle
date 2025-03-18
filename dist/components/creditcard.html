@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvana Style :: Carte de crédit</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body>
+    <div class="container max-w-none w-full mt-10 flex flex-col justify-center gap-10 items-center">
+        <!-- Carte de crédit -->
+        <div class="credit-card-wrapper">
+            <div class="credit-card">
+                <div class="credit-card-front bg">
+                    <div class="credit-card-header">
+                        <div class="credit-card-title">CARTE CREDIT</div>
+                        <div class="credit-card-brand">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M6.5 10h-2v7h2zm6 0h-2v7h2zm8.5 9H2v2h19zm-2.5-9h-2v7h2zm-7-6.74L16.71 6H6.29zm0-2.26L2 6v2h19V6z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="credit-card-chip"></div>
+                    <div class="credit-card-contactless"></div>
+                    <div class="credit-card-number">6200 9200 2300 4543</div>
+                    <button class="show-cvv">Afficher CVV</button>
+                    <div class="credit-card-validity">
+                        <span class="validity-text">VALIDITE</span> 
+                        <span class="valid-date">05/32</span>
+                    </div>
+                    <div class="person-name">DAKIN QUELIA</div>
+                    <div class="upi-icon"></div>
+                </div>
+                <div class="credit-card-back bg">
+                    <div class="back-text">
+                        <span>NON-TRANSFERABLE</span>
+                        <span>UTILISATION DIGITAL UNIQUEMENT</span>
+                      </div>
+                      <div class="mag-stripe"></div>
+                      <div class="sign-n-cvv">
+                        <span class="signature"></span>
+                        <span class="cvv">201</span>
+                      </div>
+                      <p class="dummy-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fuga nobis obcaecati
+                        dolorem qui nemo tempora tempore sequi itaque! Eos, optio doloribus illo fugiat cum neque molestiae eligendi
+                        libero dolor quas labore minus? Delectus velit dolor libero suscipit provident corporis dolorum quibusdam,
+                        praesentium beatae cupiditate harum consequatur a dignissimos necessitatibus!</p>
+                      <button class="hide-cvv">Masquer CVV</button>
+                      <div class="credit-card-brand"></div>
+                      <div class="credit-card-contact">
+                        <span>Info: info@banque.com</span>
+                        <span>Ligne téléphonique: 1800 11 1109</span>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin -->
+    </div>
+    <script type="module" defer>
+        document.querySelectorAll('.show-cvv, .hide-cvv').forEach(elem =>
+        {
+            elem.addEventListener('click', () => 
+            {
+                document.querySelector('.credit-card').classList.toggle('show-backside');
+            });
+        });
+    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>

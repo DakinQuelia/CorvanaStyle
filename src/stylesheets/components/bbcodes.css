@@ -1,0 +1,126 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : components/bbcodes.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+/**
+*   Balise : Code
+**/
+.bbcode-code {
+    @apply relative w-[600px] bg-[#f6f8fa] font-(family-name:--font-code) text-[#1f2328] text-[16px] p-[1rem] leading-[1.5] rounded-[6px] break-words shadow-sm dark:bg-gray-800/70;
+
+    & .code-clipboard {
+        @apply absolute top-0 right-0 cursor-pointer;
+    }
+
+    & code {
+        @apply overflow-auto text-[85%] leading-[1.45];
+    }
+
+    & pre {
+        @apply overflow-auto text-[85%] leading-[1.45] mb-0 break-normal text-wrap;
+    }
+
+    & .button {
+        @apply select-none appearance-none flex items-center justify-center h-[30px] w-[30px] p-0 bg-[#f6f8fa] text-[#25292e] border-1 border-[#d1d9e0] m-2 dark:bg-gray-800 dark:border-gray-800 dark:text-white;
+
+        &:hover {
+            @apply bg-[#eff2f5] border-1 border-[#d1d9e0] dark:bg-gray-600 dark:border-gray-600;
+        }
+
+        & i,
+        & ion-icon,
+        & svg {
+            @apply text-[#59636e] h-[18px] w-[18px] dark:text-white;
+        }
+    }
+}
+
+/**
+*   Balise : Code (style Mac)
+**/ 
+.bbcode-window-code {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    border-radius: 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f7f7f7;
+    color: var(--bw-foreground);
+
+    & .window-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px;
+
+        & > .circle {
+            display: inline-block;
+            height: 12px;
+            min-width: 12px;
+            max-width: 12px;
+            border-radius: 12px;
+            background-color: rgb(229, 229, 229);
+
+            &.red {
+                background-color: rgb(255, 95, 86);
+            }
+
+            &.yellow {
+                background-color: rgb(255, 189, 46);
+            }
+
+            &.green {
+                background-color: rgb(39, 201, 63);
+            }
+        }
+
+        & > .window-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 999;
+            text-align: center;
+            font-family: system-ui;
+            font-size: 0.8125em;
+            background: rgb(215, 215, 215);
+            border-radius: 0.333333em;
+            margin: -4px 0 -4px 1em;
+            text-decoration: none;
+            line-height: 1.5;
+            padding: 0.15em 0.5em;
+        }
+
+        & > .window-close {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #d1d9e0;
+            background-color: #f6f8fa;
+            height: 20px;
+            width: 20px;
+
+            &:hover {
+                border-color: #d1d9e0;
+                background-color: #eff2f5;
+            }
+        }
+    }
+
+    & > .window-main {
+        width: 100%;
+        padding: 0.75em;
+
+        & p {
+            @apply leading-[1.5] mb-[1rem];
+        }
+
+        & p:last-child {
+            @apply mb-0;
+        }
+    }
+}

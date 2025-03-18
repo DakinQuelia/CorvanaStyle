@@ -1,0 +1,14 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : utilities/textshadow.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@utility text-shadow-* {
+    text-shadow: --value([*]);
+}
+
+@utility text-shadow-sm {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}

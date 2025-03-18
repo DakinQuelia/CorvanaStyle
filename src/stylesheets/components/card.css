@@ -1,0 +1,361 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/card.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.card {    
+    @apply bg-white w-[650px] rounded-lg p-6 shadow-xl;
+}
+
+/**
+*   Carte de crédit
+**/
+.credit-card-wrapper {
+    @apply w-[410px] h-[230px] min-w-[410px] /*font-(family-name:--font-credit-card)*/ perspective-[1000px] select-none drop-shadow-(--credit-card-shadow);
+}
+
+.credit-card {
+    @apply relative w-full h-full transform transition duration-[1s] transform-3d text-(--credit-card-background);
+
+    &.show-backside {
+       @apply -rotate-y-180;
+    }
+
+    &.bg,
+    & .bg {
+        @apply bg-[#698cc0] bg-linear-to-t from-0% from-[#698cc0] to-[#9e1010] to-100%;
+    }
+    
+    & .show-cvv,
+    & .hide-cvv {
+        @apply cursor-pointer w-max rounded-[5px] border-none grid-area-[btn] text-white leading-[2] bg-[#0000006b] text-[14px] py-0 px-[10px] ml-[15px];
+    }
+
+    & .credit-card-front,
+    & .credit-card-back {
+        @apply grid absolute left-0 top-0 w-full h-full overflow-hidden rounded-[10px] backface-hidden;
+
+        &.bg,
+        & .bg {
+            @apply absolute top-0 left-0 right-0 bottom-0 opacity-[1] -z-1;
+        }
+    }
+
+    & .credit-card-front {
+        @apply gap-[10px] leading-[1] items-center p-[10px_15px_10px] justify-between grid-rows-(--credit-card-front-rows) grid-template-areas-(--credit-card-front-areas);
+
+        &::before {
+            @apply content-[''] absolute h-[420px] w-[450px] rounded-[100%] left-[-250px] -z-1;
+            background-color: hsl(0, 0%, 100%, .10);
+        }
+
+        & .credit-card-header {
+            @apply w-full inline-flex items-center justify-between mb-[10px] h-[20px];
+        }
+
+        & .credit-card-content {
+            @apply grid-rows-(--credit-card-front-rows); 
+        }
+
+        & .credit-card-brand {
+            @apply absolute right-0 justify-items-end grid-area-[brand]; 
+        }
+
+        & .credit-card-chip {
+            @apply w-[50px] ml-[15px] grid-area-[chip] border-1 border-[#0000002b] content-(--icon-card-chip);
+        }
+
+        & .credit-card-title {
+            @apply font-semibold;
+        }
+
+        & .credit-card-contactless {
+            @apply grid-area-[contactless] mr-[15px] justify-self-end drop-shadow-(--credit-card-shadow) w-[50px] h-[50px] content-(--icon-contactless);
+        }
+
+        & .credit-card-number {
+            @apply text-[25px] text-[#e8e8e8] ml-[15px] tracking-[3px] grid-area-[number] drop-shadow-[0px_0px_3px_black];
+        }
+
+        & .credit-card-validity {
+            @apply grid-area-[valid] flex items-center justify-center gap-[5px];
+
+            & .validity-text {
+                @apply text-[8px] w-min drop-shadow-[0px_0px_1px_black];
+            }
+              
+            & .valid-date {
+                @apply text-[20px] tracking-[4px];
+            }
+        }
+
+        & .person-name {
+            @apply font-bold grid-area-[name] tracking-[2px] py-0 px-[15px] drop-shadow-[0px_0px_1px_black];
+        }
+
+        & .upi-icon {
+            @apply w-[100px] h-[30px] grid-area-[type] justify-self-end;
+
+            /*
+            width: 100px;
+            background: url("https://i.ibb.co/vh20Mhn/RuPay.png") center / contain no-repeat;
+            */
+        }
+    }
+
+    & .credit-card-back {
+        @apply bg-[#050505] grid-rows-(--credit-card-back-rows) grid-template-areas-(--credit-card-back-areas) rotate-y-180;
+
+        & .back-text {
+            @apply flex py-0 px-[12px] text-[10px] text-[#ffffffba] grid-area-[text] justify-between; 
+        }
+
+        & .mag-stripe {
+            @apply w-full h-[50px] grid-area-[stripe] bg-black;
+        }
+    
+        & .sign-n-cvv {
+            @apply flex w-full grid-area-[sc] h-[40px] m-[10px_0];
+        }
+          
+        & .signature {
+            @apply w-full bg-(image:--credit-card-signature);
+        }
+          
+        & .cvv {
+            @apply h-[40px] text-black py-[10px] px-[12px] tracking-[2px] italic bg-white;
+        }
+          
+        & .dummy-text {
+            @apply grid-area-[dummy] text-[8px] text-white text-justify mr-[10px];
+        }
+          
+        & .hide-cvv {
+            @apply bg-[#0000008f] border-1 border-solid border-[#ffffff1f] m-[0_10px];
+        }
+
+        & .credit-card-contact {
+            @apply flex justify-between text-[9px] text-[#ffffff91]  grid-area-[contact] py-[2px] px-[10px] tracking-[1.5px];
+        }
+    }
+}
+
+/**
+*   Carte de jeu animée
+**/
+.play-card {
+    @apply relative bg-(--play-card-bg-color) w-[300px] h-[400px] flex justify-center items-center z-0 overflow-hidden rounded-(--play-card-border-radius);   
+}
+  
+.play-card .play-card-inner {
+    @apply absolute rounded-(--play-card-border-radius) bg-(--play-card-bg-color) w-[calc(100%-var(--play-card-border-size))] h-[calc(100%-var(--play-card-border-size))];
+}
+  
+.play-card .play-card-inner::before {
+    @apply absolute content-[''] z-[-1] w-(--play-card-inner-before-width) h-(--play-card-inner-before-height) top-[calc(50%-var(--play-card-inner-before-height)/2)] left-[calc(50%-var(--play-card-inner-before-width)/2)] blur-[20px] bg-linear-[130deg,var(--play-card-orange)_25%,var(--play-card-yellow)_96%] animate-rotate;
+}
+
+/**
+*   Jeu de cartes
+**/
+.play-card-deck {
+    @apply relative;
+}
+
+.play-card-1 {
+    @apply absolute inline-block left-[-1.9375rem] top-[-2.75rem] w-[3.875rem] h-[5.5rem] bg-white rounded-[4px] cursor-default  shadow-(--play-card-shadow);
+
+    &::before,
+    &::after {
+        @apply absolute text-[0.7rem] leading-[0.7rem] text-center w-[0.55rem] tracking-[-0.1rem] font-(family-name:--font-play-card-1) whitespace-pre-line;
+    }
+
+    &::before {
+        @apply top-[0.15rem] left-0;
+    }
+
+    &::after {
+        @apply bottom-[0.1rem] right-0 rotate-180;
+    }
+
+    & .card-face {
+        @apply h-full bg-(position:--play-card-1-background-position) bg-(length:--play-card-1-background-size) bg-no-repeat;
+    }
+
+    & .card-back {
+        @apply absolute w-full h-full top-0 left-0 bg-(image:--play-card-1-back) bg-(position:--play-card-1-background-position) bg-(length:--play-card-1-background-size) bg-no-repeat;
+    }
+
+    &.rank-4 {
+        @apply play-card-rank-["4"];
+    }
+}
+
+/**
+*   Jeu de cartes Pokémon
+**/
+.pokemon-card {
+    @apply select-none relative font-(family-name:--font-arial) drop-shadow-(--dropshadow-color-global) grid w-[450px] min-w-[450px] h-[672px] rounded-[15px] border-[15px] border-[#e7c30d] overflow-hidden;
+
+    &:before {
+        @apply content-[""] absolute top-0 left-0 w-full h-full bg-(image:--pokemon-card-bg) bg-cover -z-1;
+	}
+
+    /* Types de carte */
+    &.fire {
+        &:before {
+            @apply hue-rotate-140;
+        }
+    }
+
+    &.grass {
+        &:before {
+            @apply hue-rotate-250;
+        }
+    }
+
+    &.aqua {
+        &:before {
+            @apply hue-rotate-200;
+        }
+    }
+
+    /* Eléments de la carte */
+    & .title-row {
+        @apply grid items-center grid-template-areas-(--pokemon-card-areas) grid-cols-[auto_75px_25px] grid-rows-[15px_25px] m-[5px_20px_0px_20px] gap-[5px];
+    
+        & .pokemon-rarity {
+            @apply grid-area-[rarity] font-bold text-[12px];
+        }
+
+        & .pokemon-name {
+            @apply grid-area-[name] mb-0 text-xl;
+        }
+
+        & .pokemon-health {
+            @apply grid-area-[health] font-bold text-[20px] text-right text-red-600;
+        }
+
+        & .pokemon-type {
+            @apply grid-area-[type] w-full;
+        }
+    }    
+
+    & .character-img {
+        @apply mx-[20px] my-0 h-[270px] border-[5px] border-yellow-500 overflow-hidden;
+
+        & img {
+            @apply h-full;
+        }
+    }
+
+    & .character-meta {
+        @apply bg-yellow-500 h-[25px] my-0 mx-[40px] grid items-center;
+
+        & p {
+            @apply text-center text-[12px] font-bold italic;
+        }
+    }
+ 
+    & .character-ability {
+        @apply overflow-y-hidden grid grid-cols-[65px_auto_65px] items-center justify-items-center h-[75px] gap-[5px] my-0 mx-[20px] border-b-[2px] border-b-black;
+
+        &:last-of-type,
+        &:nth-last-of-type(2),
+        &.last {
+            @apply border-b-0!;
+        }
+
+        &.no-ability {
+            @apply border-none h-[37.5px];
+        }
+
+        & .ability-cost {
+            & img {
+                @apply unset align-baseline w-[25px] h-[25px];
+            }
+        }
+
+        & .ability-description {
+            @apply text-center;
+
+            & .ability-name {
+                @apply font-bold h-[12px] float-left text-[14px] mt-[-2px];
+            }
+
+            & p {
+                @apply text-left text-[12px];
+
+                &:before {
+                    @apply content-['\00a0']
+                }
+
+                & img {
+                    @apply h-[18px] align-middle;
+                }
+            }
+        }
+
+        & .ability-damage {
+            @apply font-bold text-[30px];
+        }
+    }   
+    
+    & .character-stats {
+        @apply grid grid-cols-(--pokemon-card-stats-cols) h-[45px] mx-[20px] border-t-[2px] border-t-black pt-[3px];
+
+        /*
+        border-top: 2px solid black;
+        margin-inline: 20px;
+        padding-top: 3px;
+        */
+
+        & .character-stat {
+            @apply grid justify-items-center grid-rows-[20px_25px]; 
+
+            & img {
+                @apply w-[25px] h-[25px];
+            }
+            
+            & p {
+                @apply text-[12px] font-bold;
+            }
+        }
+    }   
+    
+    & .character-description {
+        @apply grid h-[40px] my-0 mt-[10px] mx-[20px] border-[2px] border-yellow-500 items-center;
+
+        & p {
+            @apply italic text-[12px] py-0 px-[10px] font-bold;
+        }
+    }
+
+    & .card-details {
+        @apply h-[15px] grid grid-cols-(--pokemon-card-details-cols) text-[8px] items-center my-0 mx-[5px];
+
+        & .artist {
+            @apply font-bold;
+        }
+
+        & .company {
+            @apply text-center;
+        }
+
+        & .collector-card-number {
+            font-weight: bold;
+            text-align: right;
+            display: flex;
+            align-items: center;
+
+            &:after {
+                content: "⬤";
+                font-size: 9px;
+                line-height: 9px;
+                padding: 0 5px;
+            }
+        }
+    }    
+}

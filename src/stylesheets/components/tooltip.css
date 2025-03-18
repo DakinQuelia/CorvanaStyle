@@ -1,0 +1,43 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/tooltip.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.tooltip {
+    @apply relative cursor-pointer z-100 before:bg-(--tooltip-bg-light-color) dark:before:bg-(--tooltip-bg-dark-color);
+
+    &:hover {
+        @apply before:opacity-100 after:opacity-100;
+    }
+
+    &::before,
+    &::after {
+        @apply absolute opacity-0;
+    }
+
+    &::before {
+        @apply pointer-events-none z-2 w-max max-w-xs content-[attr(data-tip)] dark:text-white text-sm rounded-md px-3 py-2;
+    }
+
+    &::after {
+        @apply z-1 h-0 w-0 border-solid border-8 border-transparent content-[""];
+    }
+
+    &.top {
+        @apply before:bottom-(--tooltip-position-positive) before:left-1/2 before:-translate-x-1/2 after:left-1/2 after:bottom-full after:border-b-0 after:border-t-(--tooltip-bg-light-color) dark:after:border-t-(--tooltip-bg-dark-color) after:-translate-x-1/2;
+    }
+
+    &.right {
+        @apply before:top-1/2 before:left-(--tooltip-position-positive) before:-translate-y-1/2 after:border-r-(--tooltip-bg-light-color) dark:after:border-r-(--tooltip-bg-dark-color) after:border-l-0 after:top-1/2 after:left-full after:-translate-y-1/2;
+    }
+
+    &.bottom {
+        @apply before:top-(--tooltip-position-positive) before:left-1/2 before:-translate-x-1/2 after:top-full after:left-1/2 after:border-b-(--tooltip-bg-light-color) dark:after:border-b-(--tooltip-bg-dark-color) after:border-t-0 after:-translate-x-1/2;
+    }
+
+    &.left {
+        @apply before:top-1/2 before:right-(--tooltip-position-positive) before:-translate-y-1/2 after:top-1/2 after:right-full after:border-l-(--tooltip-bg-light-color) dark:after:border-l-(--tooltip-bg-dark-color) after:border-r-0 after:-translate-y-1/2;
+    }
+}

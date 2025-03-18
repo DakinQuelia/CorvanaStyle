@@ -1,0 +1,78 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/login.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.login-wrapper .container {
+    @apply flex items-center justify-center h-screen w-full md:mx-auto;
+}
+
+.login-box {
+    @apply flex justify-between items-center w-full h-[600px] border-1 border-gray-200 rounded-lg shadow-md;
+}
+
+.login-box .logo {
+    @apply flex items-center justify-center mb-[30px] text-[32px]!;
+}
+
+.login-box a {
+    @apply text-theme hover:text-black transition-all duration-300;
+}
+
+.login-box .col-1 {
+    @apply w-1/2 h-full flex justify-center items-center;
+
+    & h1.title {
+        @apply mb-5 text-left;
+    }
+
+    & p.title {
+        @apply mb-5 text-center;
+    }
+
+    & .account-link {
+        @apply mt-3 text-center;
+    }
+}
+
+.login-box .col-2 {
+    @apply w-1/2 h-full;
+
+    & img {
+        @apply h-full w-full object-cover rounded-r-lg;
+    }
+}
+
+.login-box form {
+    @apply w-[80%];
+}
+
+.login-box .title {
+    @apply font-bold text-3xl;
+}
+
+.login-box .separator {
+    @apply border-b-2 border-theme mt-3 mb-5;
+}
+
+.login-box .field-row {
+    @apply flex flex-col mb-5;
+}
+
+.login-box .field-row .label {
+    @apply mb-1 font-bold;
+}
+
+.login-box .field-row input {
+    @apply border-1 border-gray-300 invalid:border-red-500 invalid:text-red-600 focus:border-theme focus:outline focus:outline-theme focus:invalid:border-red-500 focus:invalid:outline-red-500 disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500 disabled:shadow-none dark:disabled:border-gray-700 dark:disabled:bg-gray-800/20 rounded-md p-1;
+}
+
+.login-box .col-2 img {
+    @apply h-full w-full object-cover rounded-r-lg;
+}
+
+.login-box .account-button {
+    @apply w-full cursor-pointer bg-theme text-white py-2 px-4 rounded-lg hover:bg-hover;
+}

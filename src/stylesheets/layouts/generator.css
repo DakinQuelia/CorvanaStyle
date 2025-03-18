@@ -1,0 +1,65 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : layouts/generator.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.generator {
+    /*
+    @apply mx-auto;
+
+    & .container {
+        @apply mx-auto w-full;
+    }
+    */
+}
+
+.generator-wrapper {
+    @apply /*absolute*/ w-full min-w-[550px] bg-white p-[30px] rounded-xl shadow-md /*transform translate-[-50%_-50%] top-[50%] left-[50%]*/;
+
+    &.sm {
+        @apply max-w-[550px];
+    }
+
+    & .generator-output {
+        @apply relative bg-[#f2f1f1] w-full min-h-[250px] py-[20px] px-0 mb-[10px] overflow-hidden rounded-md grid place-items-center;
+
+        & #blob {
+            @apply w-[300px] h-[300px] bg-(image:--generator-0-gradient) shadow-(--generator-0-shadow);
+        }
+    }
+
+    & .dimensions {
+        @apply flex justify-around mt-[20px] mr-0 mb-[40px] ml-0 gap-[20px];
+
+        & label {
+            @apply font-medium mr-[10px];
+        }
+
+        & input[type="number"] {
+            @apply h-[40px] w-[80px] p-[10px] mt-[5px];
+        }
+
+        & .field .col-right {
+            @apply justify-end;
+        }
+    }
+
+    & .generator-sliders {
+        @apply w-full grid grid-cols-[1fr_1fr] gap-[20px];
+    }
+
+    & .generator-result {
+        @apply flex items-center mt-[20px];
+
+        & input[type="text"] {
+            @apply h-[36px] p-[10px] border-0 bg-slate-100;
+        }
+
+        & button {
+            @apply h-[36px] ml-[10px] py-2 px-4 bg-theme cursor-pointer rounded-md text-white hover:bg-theme/70;
+        }
+    }
+}
+

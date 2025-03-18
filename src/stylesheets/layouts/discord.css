@@ -1,0 +1,278 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : layouts/discord.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.discord-wrapper {
+    @apply w-full max-w-none dark:bg-discord-gray-500 overflow-x-hidden;
+}
+
+.discord-wrapper .container {
+    @apply w-full relative max-w-none;
+}
+
+/**
+*   Infobulle (tooltip)
+**/
+.discord-tooltip {
+    @apply relative before:absolute before:content-[attr(data-tip)] before:px-3 before:py-2 before:w-max before:max-w-xs before:-translate-x-1/2 before:bg-discord-gray-900 before:text-white before:rounded-md before:opacity-0 before:transition-all after:absolute after:h-0 after:w-0 after:-translate-x-1/2 after:border-8 after:border-t-discord-gray-900 after:opacity-0 after:transition-all font-normal cursor-pointer text-sm hover:before:opacity-100 hover:after:opacity-100 before:pointer-events-none z-50;
+
+    &.top {
+        @apply before:left-1/2 before:-top-3 after:left-1/2 after:-top-3 before:-translate-y-full after:border-b-transparent after:border-l-transparent after:border-r-transparent;
+    }
+
+    &.bottom {
+        @apply before:left-1/2 after:left-1/2 before:-bottom-3 before:translate-y-full after:top-auto after:-bottom-3 after:border-b-discord-gray-900 after:border-l-transparent after:border-t-transparent after:border-r-transparent;
+    }
+
+    &.left {
+        @apply before:top-1/2 before:right-3 before:-translate-x-0 before:-translate-y-1/2 after:top-1/2 after:right-3 after:left-auto after:translate-x-full after:-translate-y-1/2 after:border-l-discord-gray-900 after:border-b-transparent after:border-t-transparent after:border-r-0;  
+    }
+
+    &.right {
+        @apply before:top-1/2 before:left-3 before:translate-x-0 before:-translate-y-1/2 after:top-1/2 after:left-3 after:right-auto after:-translate-x-full after:-translate-y-1/2 after:border-r-discord-gray-900 after:border-b-transparent after:border-t-transparent after:border-l-0;
+    }
+}
+
+/**
+*   Navigation
+**/
+.discord-navbar {
+    @apply flex;
+}
+
+.discord-sidebar {
+    @apply fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-discord-gray-1000 dark:bg-discord-primary text-gray-900 dark:text-discord-secondary shadow-lg;
+}
+
+.discord-sidebar ul {
+    @apply flex flex-col items-center justify-center;
+}
+
+.discord-sidebar ul li {
+    @apply grow;
+
+    &:hover {
+        & .discord-tooltip {
+            @apply block;
+        }
+    }
+}
+
+.discord-sidebar ul li:nth-last-child(2) {
+    @apply mt-auto;
+}
+
+.discord-sidebar .inner {
+    @apply bg-discord-gray-1100;
+}
+
+.discord-sidebar .sidebar-separator {
+    @apply border-b-2 border-gray-500 dark:border-discord-separator w-8 flex justify-center mx-auto mt-1 mb-1; 
+}
+
+.discord-sidebar .sidebar-icon {
+    @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto bg-gray-300 dark:bg-discord-gray-800 font-bold text-discord-secondary hover:bg-discord-secondary dark:text-white dark:hover:bg-discord-secondary hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
+}
+
+/**
+*   Contenu
+**/
+.discord-content-wrapper {
+    @apply relative w-full max-w-none left-16 dark:text-white overflow-hidden flex;
+}
+
+.discord-content-wrapper .discord-channels {
+    @apply w-[245px] min-w-[245px] flex flex-col bg-discord-gray-1100 h-screen m-0 text-discord-text-gray select-none;
+}
+
+.discord-content-wrapper .discord-channels .header {
+    @apply flex items-baseline font-bold h-[48px] p-3 mb-5 border-b-2 border-discord-gray-1500;
+
+    & .icon {
+        @apply relative mr-2 top-[1px];
+    }
+
+    & .name {
+        @apply text-white;
+    }
+
+    & .toggle {
+        @apply ml-auto cursor-pointer;
+    }
+}
+
+.discord-content-wrapper .discord-channels .category {
+    @apply font-bold my-3 flex justify-between;
+
+    &:hover {
+        @apply text-white;
+    }
+}
+
+.discord-content-wrapper .discord-channels a { 
+    &:hover {
+        @apply text-white;
+    }
+}
+
+.discord-content-wrapper .discord-channels .category .cat-add {
+    @apply cursor-pointer;
+}
+
+.discord-content-wrapper .discord-channels .channels {
+    @apply p-3;
+}
+
+.discord-content-wrapper .discord-channels .channels ul {
+    @apply -mt-3;
+}
+
+.discord-content-wrapper .discord-channels .channels li {
+    @apply flex items-center my-auto h-[32px] mb-2 px-[10px] py-[5px] justify-between;
+
+    &:not(.category):hover,
+    &:not(.category).active {
+        @apply bg-discord-channel-hover rounded-[5px];
+
+        & .channel .chan-name {
+            @apply text-white;
+        }
+
+        & .chan-options {
+            @apply inline-flex gap-[7px];
+        }
+    } 
+
+    &.not-channel:hover,
+    &.not-channel.active {
+        @apply bg-transparent;
+    }
+}
+
+.discord-content-wrapper .discord-channels .channels li .chan-options {
+    @apply cursor-pointer;
+
+    & span:hover,
+    & div:hover {
+        @apply text-white;
+    }
+}
+
+.discord-content-wrapper .discord-channels .channels li.category:first-child {
+    @apply mt-0;
+}
+
+
+.discord-content-wrapper .discord-channels .channels li .chan-icon {
+    @apply mr-[10px];
+}
+
+.discord-content-wrapper .discord-channels .channels li .chan-options {
+    @apply text-sm hidden;
+}
+
+.discord-content-wrapper .discord-toolbar {
+    @apply flex font-bold h-[48px] w-full p-3 mb-5 border-b-2 border-discord-gray-1300;
+
+    & .channel-title {
+        @apply inline-flex items-center;
+    }
+
+    & .channel-title .hashtag {
+        @apply text-2xl mr-2;
+    }
+
+    & .channel-title .title {
+        @apply mr-2;
+    }
+
+    & .channel-desc {
+        @apply text-sm border-l-1 border-(--color-discord-gray-1200) ml-1 px-2 text-discord-channel-desc font-normal;
+    }
+}
+
+.discord-content-wrapper .discord-content {
+    @apply flex flex-col max-w-[calc(100%-300px-250px)];
+}
+
+.discord-content-wrapper .discord-content .discord-messages {
+    @apply flex flex-col bg-[#313338] px-4 ;
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message {
+    @apply flex flex-col mt-1 mb-1 p-2;
+
+    &:first-child {
+        @apply mt-0;
+    }
+
+    &:hover {
+        @apply bg-discord-gray-1700 rounded-md;
+    }
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message .infos {
+    @apply flex items-center;
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message .avatar {
+    @apply relative w-[50px] top-[10px];
+
+    & img {
+        @apply rounded-[50%] w-[32px] h-[32px] object-cover;
+    }
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message .username {
+    @apply mr-[10px];
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message .datetime {
+    @apply relative text-xs text-discord-gray-1600 top-[1px];
+}
+
+.discord-content-wrapper .discord-content .discord-messages .user-message .message {
+    @apply flex flex-col m-[0_50px];
+}
+
+/**
+*   Liste des utilisateurs
+**/
+.discord-users {
+    @apply fixed top-0 right-0 h-screen w-[245px] min-w-[245px] m-0 flex flex-col bg-discord-gray-1100 text-discord-text-gray select-none; 
+}
+
+.discord-users ul::before {
+    @apply content-[''] block font-bold h-[48px] p-3 mb-5 border-b-2 border-discord-gray-1500;
+}
+
+.discord-content-wrapper .discord-users ul {
+    
+}
+
+.discord-content-wrapper .discord-users li {
+    @apply flex items-center my-auto h-[32px] mb-1 ml-2 mr-[10px] px-[10px] py-[5px];
+}
+
+.discord-content-wrapper .discord-users .header {
+    @apply font-bold uppercase text-[12px];
+}
+
+.discord-content-wrapper .discord-users .user {
+    &:hover {
+        @apply bg-discord-gray-1800;
+    }
+}
+
+.discord-content-wrapper .discord-users .user {
+    @apply h-[45px] rounded-[5px];
+}
+
+.discord-content-wrapper .discord-users .user .avatar {
+    & img {
+        @apply rounded-[50%] w-[32px] h-[32px] min-w-[32px] min-h-[32px] mr-[10px] object-cover;
+    }
+}

@@ -1,0 +1,66 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/popover.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.popover {
+    @apply relative w-full max-w-sm h-auto shadow-sm;
+
+    &::before,
+    &.top::before {
+        @apply absolute content-[''] w-[22px] h-[22px] bg-white border-white border-t-0 border-r-2 border-b-2 border-l-0 top-full left-[50%] ml-[-11px] mt-[-11px] transform rotate-45; 
+    }
+
+    &.right {
+        &::before {
+            @apply border-r-2 border-r-white bg-white border-white left-0 right-full top-[50%] mt-[5px] transform rotate-45 z-1; 
+        }
+    } 
+
+    &.bottom {
+        @apply dark:before:bg-gray-500! dark:before:border-gray-500!;
+        
+        &::before {
+            @apply border-b-0 border-l-2 border-t-2 border-r-0 bg-theme border-theme top-0 bottom-full left-[50%] ml-[-11px] mb-[-11px] transform rotate-45 -z-1; 
+        }
+    }
+
+    &.left {
+        &::before {
+            @apply border-l-2 border-l-white bg-white border-white left-full top-[50%] mt-[5px] transform rotate-45 z-1; 
+        }
+    }
+
+    & .popover-header {
+        @apply bg-theme px-3 py-2 rounded-tl-md rounded-tr-md flex items-center justify-between dark:bg-gray-500! z-10;
+
+        & h1,
+        & h2,
+        & h3,
+        & h4,
+        & h5,
+        & h6 {
+            @apply text-white text-base font-bold;
+        }
+
+        & .popover-close button {
+            @apply flex items-center justify-center z-10 p-[0] mr-[-4px];
+
+            & i,
+            & ion-icon,
+            & svg {
+                @apply text-white flex justify-center mr-0;
+            }
+        }
+    }
+
+    & .popover-content {
+        @apply relative bg-white px-3 py-3 rounded-bl-md rounded-br-md pb-[20px] z-2 dark:text-black;
+
+        & p {
+            @apply text-sm text-gray-500 dark:text-dark-theme/70!;
+        }
+    }
+}
