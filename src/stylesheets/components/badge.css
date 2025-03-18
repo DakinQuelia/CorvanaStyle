@@ -1,0 +1,16 @@
+
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/badge.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.badge {
+    @apply flex items-center justify-center rounded-full bg-primary py-1 px-4 text-white dark:bg-gray-600;
+
+    &.badge-ghost,
+    &.badge-gray {
+        @apply bg-gray-1300 text-black;
+    }
+}

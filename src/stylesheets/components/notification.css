@@ -1,0 +1,15 @@
+.notification {
+    @apply mx-auto flex max-w-sm items-center gap-x-4 rounded-lg bg-white p-6 shadow-md outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10;
+}
+
+.notification img {
+    @apply size-12 shrink-0;
+}
+
+.notification .title {
+    @apply text-xl font-medium text-black dark:text-white;
+}
+
+.notification p {
+    @apply text-gray-500 dark:text-gray-400;
+}

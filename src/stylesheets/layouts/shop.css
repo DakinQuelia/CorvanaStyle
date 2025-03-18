@@ -1,0 +1,138 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : layouts/shop.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.shop-wrapper {
+    @apply relative isolate bg-white dark:bg-dark-theme px-6 py-8 mb-8 lg:px-8;
+
+    & h2 {
+        @apply text-[40px] font-bold leading-[50px];
+    }
+
+    & .shop {
+        @apply mx-auto mt-16 grid grid-cols-3 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3 gap-[20px];
+    }
+
+    & .shop-box {
+        @apply rounded-3xl bg-white/60 text-black p-8 ring-1 ring-slate-200 sm:mx-8 sm:p-10 lg:mx-0 shadow-md dark:bg-dark-theme/60 dark:ring-black dark:text-white;
+
+        &.active {
+            @apply relative rounded-3xl bg-slate-300/20 p-8 ring-1 shadow-2xl ring-slate-200 sm:p-10 dark:ring-black dark:bg-gray-800/50 dark:text-white;
+
+            & .price-wrapper .price {
+                @apply text-5xl font-semibold tracking-tight text-black dark:text-white;
+            }
+
+            & .shop-offers {
+                @apply mt-8 space-y-3 text-sm/6 text-black sm:mt-10 dark:text-white;
+            }
+
+            & .item-description {
+                @apply mt-6 text-base/7 text-black dark:text-white;
+            }
+        }
+
+        & h3 {
+            @apply text-base/7 font-semibold text-theme dark:text-white;
+        }
+
+        & .price-wrapper {
+            @apply mt-4 flex items-baseline gap-x-2;
+        }
+
+        & .price-wrapper .price {
+            @apply text-5xl font-semibold tracking-tight text-gray-900 dark:text-white;
+        }
+
+        & .price-wrapper .month {
+            @apply text-base text-gray-500 dark:text-white;
+        }
+
+        & .item-description {
+            @apply mt-6 text-base/7 text-gray-600 dark:text-white;
+        }
+    }
+
+    & .shop-offers {
+        @apply mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10 dark:text-white;
+
+        & li {
+            @apply flex gap-x-3;
+        }
+
+        & li i,
+        & li ion-icon,
+        & li svg {
+            @apply text-theme dark:text-white;
+        }
+    }
+
+    & .shop-subscribe {
+        @apply w-[150px] mt-8 block rounded-md px-3.5 py-2.5 pt-[4px] text-center text-2xl font-semibold text-white hover:text-theme ring-2 ring-theme/70 ring-inset hover:bg-theme/0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme/70 sm:mt-10 dark:hover:text-white dark:ring-dark-theme/70;
+    }
+
+    & .shop-subscribe-2 {
+        @apply w-[150px] mt-8 block rounded-md bg-theme px-3.5 py-2.5 pt-[4px] text-center text-2xl font-semibold text-white shadow-xs hover:bg-theme/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme sm:mt-10 dark:text-white dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-600 dark:focus-visible:outline-dark-theme;
+    }
+
+    & .shop-categories {
+        @apply flex gap-[20px] w-full justify-around;
+    }
+
+    & .shop-card {
+        @apply relative cursor-pointer w-[300px] min-h-[250px] py-(--shop-card-before-size) rounded-2xl bg-white/60 text-black p-4 ring-1 ring-slate-200 lg:mx-0 shadow-md dark:ring-dark-theme/70 dark:after:bg-dark-theme/70! dark:before:bg-dark-theme/70!;
+
+        &::before,
+        &::after {
+            @apply absolute content-[''] w-full h-(--shop-card-before-size) border-3 border-transparent rounded-2xl bg-theme;
+        }
+
+        &::before {
+            @apply  top-0 left-0 rounded-bl-none rounded-br-none;
+        }
+
+        &::after {
+            @apply bottom-0 left-0 rounded-tl-none rounded-tr-none;
+        }
+
+        & .category-icon {
+            @apply flex items-center justify-center mb-5 mt-3;
+
+            & img,
+            & ion-icon,
+            & i,
+            & svg {
+                @apply text-2xl w-16 h-16 text-theme dark:text-dark-theme;
+            }    
+        }
+
+        & .category-name {
+            @apply font-bold text-theme dark:text-dark-theme;
+        }
+
+        & .category-description {
+           @apply my-4 text-black!;
+        }
+
+        & .category-link {
+            @apply flex items-center justify-center;
+            
+            & a {
+                @apply cursor-pointer w-auto flex items-center justify-center bg-theme dark:bg-gray-800 rounded-sm text-white py-[5px] px-[10px] hover:bg-hover dark:hover:bg-dark-hover mb-4;
+            
+                & i,
+                & ion-icon,
+                & .icon {
+                    @apply mr-[5px];
+                }
+                
+                & .icon.icon-only {
+                    @apply mr-0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/animations.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+
+/**
+*   Animation : Titre
+**/
+.title-anime {
+    @apply text-[50px] font-semibold text-white uppercase;
+
+    & span {
+        @apply inline-block /*overflow-hidden*/ leading-[0.8];
+
+        & span {
+            @apply block translate-y-full animate-title-reveal;
+        }
+    }
+}

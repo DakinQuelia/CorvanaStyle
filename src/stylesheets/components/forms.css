@@ -1,0 +1,226 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/forms.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+/**
+*   Global
+**/
+fieldset {
+    @apply w-full mb-3 bg-white rounded-lg border-1 border-solid border-forms-border text-p px-[15px];
+
+    &:last-child {
+        @apply mb-0;
+    }
+
+    & legend {
+        @apply px-[5px] font-semibold;
+    }
+
+    & .field:first-of-type {
+        @apply mt-4;
+    }
+}
+
+.required {
+    @apply text-red-600;
+}
+
+form {
+    @apply w-full; 
+
+    & input,
+    & textarea,
+    & select {
+        @apply w-full bg-white rounded-md border-1 border-solid border-forms-border px-4 py-2 leading-tight text-p dark:text-dark-p focus:outline-none;
+
+        &::placeholder {
+            @apply dark:text-white;
+        }
+
+        &:focus {
+            @apply border-theme;
+        }
+    }
+
+    & button {
+        @apply cursor-pointer flex items-center bg-theme dark:bg-gray-800 rounded-sm text-white py-[5px] pt-[2px] px-[10px] hover:bg-hover dark:hover:bg-dark-hover;
+
+        & i,
+        & ion-icon,
+        & svg {
+            @apply pt-[2px];
+        }
+    }
+
+    & label {
+        @apply text-p dark:text-white font-semibold;
+    }
+
+    & fieldset {
+        @apply w-full mb-3 bg-white rounded-lg border-1 border-solid border-forms-border text-p px-[15px];
+
+        &:last-child {
+            @apply mb-0;
+        }
+
+        & legend {
+            @apply px-[5px] font-semibold;
+        }
+
+        & .field:first-of-type {
+            @apply mt-4;
+        }
+    }
+
+    & input[type="checkbox"],
+    & input[type="radio"] {
+        @apply appearance-none p-0 w-[24px] h-[24px] border-1 border-forms-border;
+
+        &:focus {
+            @apply border-theme;
+        }
+    }
+
+    & input[type="checkbox"] {
+        @apply h-6 w-6 text-theme font-bold stroke-theme mr-[10px];
+
+        &::after {
+            @apply relative flex items-center justify-center content-(--forms-checkbox-icon) text-[20px] top-[2px] stroke-theme text-theme opacity-[0];
+        }
+
+        &:checked:after {
+            @apply opacity-[1];
+        }
+    }
+
+    & input[type="radio"] {
+        @apply appearance-auto rounded-xl ml-[10px] mr-[10px];
+
+        &:first-child {
+            @apply ml-0;
+        }
+    }
+
+    & textarea {
+        @apply resize-none min-h-[100px];
+    }
+
+    & select
+    & .select {
+        @apply relative block w-full appearance-none rounded-md py-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1.5)-1px)] pr-[calc(--spacing(10)-1px)] pl-[calc(--spacing(3.5)-1px)] sm:pr-[calc(--spacing(9)-1px)] sm:pl-[calc(--spacing(3)-1px)] [_optgroup]:font-semibold text-base/6 text-zinc-950 placeholder:text-zinc-500 sm:text-sm/6 dark:text-white dark:*:text-white border border-zinc-950/10 data-hover:border-zinc-950/20 dark:border-white/10 dark:data-hover:border-white/20 bg-transparent dark:bg-white/5 dark:*:bg-zinc-800 focus:outline-hidden data-invalid:border-red-500 data-invalid:data-hover:border-red-500 dark:data-invalid:border-red-600 dark:data-invalid:data-hover:border-red-600 data-disabled:border-zinc-950/20 data-disabled:opacity-100 dark:data-disabled:border-white/15 dark:data-disabled:bg-white/[2.5%] dark:data-hover:data-disabled:border-white/15;
+    }
+}
+
+form .field {
+    @apply flex mb-4 w-full items-center;
+
+    & .col-left,
+    & .col-right {
+        @apply w-1/2 text-left flex; 
+    }
+
+    & .col-left { 
+
+    }
+
+    & .col-right {
+        & * > {
+            @apply w-auto;
+        } 
+    }
+
+    & .col-full {
+        & label { 
+            @apply mb-2;
+        }
+    }
+} 
+
+/**
+*   Boutons
+**/
+form .buttons {
+    @apply flex items-center mt-[15px] mb-[15px] justify-end gap-[10px];
+
+    & button {
+        @apply cursor-pointer flex items-center bg-theme dark:bg-gray-800 rounded-sm text-white py-[5px] px-[10px] hover:bg-hover dark:hover:bg-dark-hover;
+
+        & [class^="icon-"],
+        & ion-icon,
+        & i {
+            @apply text-2xl mr-[5px] font-bold;
+        } 
+
+        &.red,
+        &.cancel,
+        &.reset {
+            @apply bg-red-700 hover:bg-red-700/70;
+        }
+
+        &.green,
+        &.success,
+        &.submit {
+            @apply bg-green-700 hover:bg-green-700/70;
+        }
+    }
+}
+
+/**
+*   Switch
+**/
+form .switch {
+    @apply relative cursor-pointer block bg-white border-solid border-1 border-forms-border w-[60px] h-[30px] rounded-full;
+
+    & span {
+        @apply w-2/5 h-4/5 bg-hover/50 dark:bg-dark-hover/50 absolute rounded-full left-[4px] top-[3px] peer-checked:bg-theme dark:peer-checked:bg-dark-theme peer-checked:top-[3px] peer-checked:left-[32px] transition-all duration-500;
+    }
+}
+
+/**
+*   Groupe des boutons
+**/
+.buttons-group {
+    @apply flex border w-full border-slate-200 rounded-md dark:border-neutral-700;
+
+    & button {
+        @apply cursor-pointer h-[36px] py-[2px] px-[10px] inline-flex justify-center items-center gap-2 rounded-none font-medium text-[14px] bg-theme shadow-xs ring-theme/70 ring-inset text-white! hover:text-theme/70 hover:bg-theme/70 focus:outline-none focus:bg-theme text-xs md:text-[13px] dark:bg-neutral-900 dark:hover:bg-neutral-700 dark:focus:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400;
+
+        &:first-child {
+            @apply rounded-s-md;
+        } 
+
+        &:last-child {
+            @apply rounded-e-md;
+        }
+    }
+
+    &.light {
+        @apply border-slate-200!;
+
+        & button {
+           @apply bg-white shadow-xs ring-gray-300 ring-inset text-slate-400! hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:bg-gray-50; 
+        }
+
+        & .buttons-group-divider {
+            @apply relative flex items-center bg-white pr-5 after:absolute after:right-2.5 after:h-9 after:w-px after:bg-slate-200!;
+        }
+    }
+
+    & .buttons-group-divider {
+        @apply relative flex items-center pr-5 bg-theme dark:bg-gray-800 after:absolute after:right-2.5 after:h-9 after:w-px after:bg-theme/10;
+    }
+}
+
+/**
+*   Administration :: Formulaires
+**/
+.admin-page input {
+    @apply rounded-md p-2 bg-white border-solid border-1 border-[#CCCCCC] h-[36px] w-full resize-none dark:text-black dark:border-transparent;
+}
+
+.admin-page textarea {
+    @apply rounded-md p-2 bg-white border-solid border-1 border-[#CCCCCC] w-full resize-none h-40 dark:text-black dark:border-transparent;
+}

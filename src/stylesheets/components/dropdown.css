@@ -1,0 +1,32 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/dropdown.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.dropdown {
+    @apply absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-slate-200 rounded-md bg-white ring-1 shadow-md ring-black/5 focus:outline-hidden select-none;
+
+    & .dropdown-link {
+        @apply flex items-center px-4 py-2 text-sm text-slate-600 hover:bg-slate-100;
+
+        & i,
+        & ion-ico,
+        & svg {
+            @apply mr-3;
+        } 
+
+        &.disabled {
+            @apply text-gray-400 pointer-events-none;
+        }
+    }
+
+    & .dropdown-group {
+        @apply py-1;
+    }
+}
+
+.button-dropdown {
+    @apply inline-flex w-full items-center justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-600 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-slate-100!;
+}

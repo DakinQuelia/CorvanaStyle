@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvana Style :: Animations</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body class="base">
+    <section class="bg-gray-600! text-white! h-screen flex items-center justify-center">
+        <div class="container w-full flex items-center justify-center">
+            <h1 class="title-anime">Mon texte est un <strong>titre</strong>.</h1>
+        </div>
+    </section>
+    <script type="module" defer>
+        import Animations from '../assets/javascripts/components/animations.js';
+        /* */
+        Animations.constructor.animateTitle('.title-anime');
+    </script>
+     <script type="module" src="../assets/javascripts/app.js" defer></script>
+     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>

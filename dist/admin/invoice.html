@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corvana Style :: Facture</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body class="admin-page">
+    <div class="container">
+        <aside class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+                        <span class="title">Votre Application (v1.0.0.)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon" title="Aide">
+                            <ion-icon name="help-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Aide</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./index.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Administration</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Paramètres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Statistiques</span>
+                    </a>
+                </li>
+                <!-- Utilisateur -->
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="key-outline"></ion-icon></span>
+                        <span class="title">Mot de passe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Se déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="user-links">
+               
+            </ul>
+        </aside>
+        <main class="page-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" id="search" name="search" placeholder="Rechercher..." />
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="https://picsum.photos/seed/picsum/200/300" alt="Utilisateur" />
+                </div>
+                <!-- 
+                <div aria-label="Theme" role="toolbar" aria-orientation="horizontal" class="switch-theme" style="margin-right: -40px;">
+                    <button type="button" aria-label="dark" data-theme="dark">
+                        <span class="absolute inset-[calc(-3/16*1rem)]"></span>
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="size-5">
+                            <path fill="currentColor" fill-opacity=".15" fill-rule="evenodd" clip-rule="evenodd" d="M15.25 10.68a4.614 4.614 0 0 1-5.929-5.93 5.274 5.274 0 1 0 5.929 5.93Z"></path>
+                            <path fill="currentColor" d="m15.25 10.68.743.098a.75.75 0 0 0-1.003-.802l.26.703ZM9.321 4.75l.704.26a.75.75 0 0 0-.803-1.003l.1.743Zm5.669 5.226a3.855 3.855 0 0 1-1.34.238v1.5c.653 0 1.28-.117 1.86-.331l-.52-1.407Zm-1.34.238A3.864 3.864 0 0 1 9.786 6.35h-1.5a5.364 5.364 0 0 0 5.364 5.364v-1.5ZM9.786 6.35c0-.473.085-.923.239-1.34l-1.407-.52a5.354 5.354 0 0 0-.332 1.86h1.5ZM5.5 9.977a4.524 4.524 0 0 1 3.92-4.484l-.198-1.486A6.024 6.024 0 0 0 4 9.977h1.5Zm4.523 4.523A4.523 4.523 0 0 1 5.5 9.977H4A6.023 6.023 0 0 0 10.023 16v-1.5Zm4.484-3.92a4.524 4.524 0 0 1-4.484 3.92V16a6.024 6.024 0 0 0 5.97-5.222l-1.486-.198Z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" aria-label="light" data-theme="light">
+                        <span class="absolute inset-[calc(-3/16*1rem)]"></span>
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="size-5">
+                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                <circle cx="10" cy="10" r="3.25" fill="currentColor" fill-opacity=".15"></circle>
+                                <path d="M10 3.75v.5M14.42 5.58l-.354.354M16.25 10h-.5M14.42 14.42l-.354-.354M10 15.75v.5M5.934 14.065l-.354.354M4.25 10h-.5M5.934 5.935 5.58 5.58"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                -->
+            </div>
+            <!-- Facture -->
+            <div class="invoice-page">
+                <div class="invoice-content">
+                    <h1 class="page-title">Mes factures</h1>
+                    <p class="page-desc">Sur cette page, vous pouvez générer vos factures.</p>
+                    <div class="invoice-toolbar">
+                        <p class="badge badge-ghost uppercase">
+                            <span>Facture-</span>XXX-XXX
+                        </p>
+                        <div class="toolbar">
+                            <select name="" id="" class="select select-sm select-bordered w-full">
+                                <option value="1">Brouillon</option>
+                                <option value="2">En attente</option>
+                                <option value="3">Payée</option>
+                                <option value="4">Annulée</option>
+                                <option value="5">Impayée</option>
+                            </select>
+                            <button class="button-primary">Sauvegarder</button>
+                            <button class=""><ion-icon name="trash-outline"></ion-icon></button>
+                        </div>
+                    </div>
+                    <div class="invoice-blocks">
+                        <div class="invoice-block-col-1">
+                            <div class="totals">
+                                <div class="header">
+                                    <div class="badge badge-accent">Résumé des Totaux</div>
+                                    <!-- 
+                                        TVA (%) 
+                                        Switch
+                                    -->
+                                </div>
+                                <div class="total">
+                                    <span>Total Hors Taxes</span>
+                                    <span>150,00 €</span>
+                                </div>
+                                <div class="total">
+                                    <span>TVA (0 %)</span>
+                                    <span>0,00 €</span>
+                                </div>
+                                <div class="total bold">
+                                    <span>Total TTC</span>
+                                    <span>150,00 €</span>
+                                </div>
+                            </div>
+                            <div class="invoice-block">
+                                <div class="header">
+                                    <div class="badge badge-accent">Emetteur</div>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <input type="text" name="test" id="test" placeholder="Nom de l'entreprise émettrice" />
+                                    </div>
+                                    <div class="row">
+                                        <textarea name="" id="" placeholder="Adresse de l'entreprise émettrice"></textarea>
+                                    </div>
+                                </div>
+                                <div class="header">
+                                    <div class="badge badge-accent">Client</div>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <input type="text" name="test" id="test" placeholder="Nom de l'entreprise cliente" />
+                                    </div>
+                                    <div class="row">
+                                        <textarea name="" id="" placeholder="Adresse de l'entreprise cliente"></textarea>
+                                    </div>
+                                </div>
+                                <div class="header">
+                                    <div class="badge badge-accent">Date de la facture</div>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <input type="date" name="test" id="test" />
+                                    </div>
+                                </div>
+                                <div class="header">
+                                    <div class="badge badge-accent">Date d'échéance</div>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <input type="date" name="test" id="test" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-block-col-2">
+                            <!-- Gestion :: Facture -->
+                            <div class="invoice-block">
+                                <div class='h-fit'>
+                                    <div class="header">
+                                        <h2 class="badge badge-accent">Produits / Services</h2>
+                                        <button class="btn icon-only mr-[5px]">
+                                            <ion-icon name="add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <div class="scrollable">
+                                        <table class="table w-full">
+                                            <thead class="uppercase">
+                                                <tr>
+                                                    <th>Quantité</th>
+                                                    <th>Description</th>
+                                                    <th>Prix Unitaire (HT)</th>
+                                                    <th>Montant (HT)</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="0">
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" value="Description" class="input input-sm input-bordered w-full bg-white" placeholder="Description produit" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td class="price">130,00 €</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-circle btn-accent">
+                                                            <ion-icon name="trash-outline" class="w-4"></ion-icon>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr id="1">
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" value="Description" class="input input-sm input-bordered w-full bg-white" placeholder="Description produit" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td class="price">20,00 €</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-circle btn-accent">
+                                                            <ion-icon name="trash-outline" class="w-4"></ion-icon>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr id="2">
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" value="Description" class="input input-sm input-bordered w-full bg-white" placeholder="Description produit" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" value="0" class="input input-sm input-bordered w-full bg-white" min="0" />
+                                                    </td>
+                                                    <td class="price">0,00 €</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-circle btn-accent">
+                                                            <ion-icon name="trash-outline" class="w-4"></ion-icon>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aperçu :: Facture -->
+                            <div class="invoice-preview">
+                                <div class="invoice-doc">
+                                    <div class="invoice-doc-header">
+                                        <div class="invoice-col">
+                                            <div class="invoice-logo-wrapper">
+                                                <div class="invoice-logo">
+                                                    <ion-icon name="layers-outline"></ion-icon>
+                                                </div>
+                                                <span class="logo-text">
+                                                    Fac<span class="text-accent">ture</span>
+                                                </span>
+                                            </div>
+                                            <h1 class="title">Facture</h1>
+                                        </div>
+                                        <div class="text-right uppercase">
+                                            <p class="badge badge-ghost">Facture ° XXX-XXX</p>
+                                            <p class="my-2">
+                                                <strong>Date </strong>
+                                                14/02/2025
+                                            </p>
+                                            <p>
+                                                <strong>Date d'échéance </strong>
+                                                28/02/2025
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="invoice-infos">
+                                        <div class="invoice-sender">
+                                            <p class="header">Émetteur</p>
+                                            <p class="invoice-name">Entreprise Marsoin</p>
+                                            <p class="invoice-text">Avenue Jean Jaurès 128</p>
+                                            <p class="invoice-text">69000 Lyon</p>
+                                        </div>
+                                        <div class="invoice-client">
+                                            <p class="header">Client</p>
+                                            <p class="invoice-name">Monsieur Dupont Gérard</p>
+                                            <p class="invoice-text">Rue des Marcacis 45</p>
+                                            <p class="invoice-text">93000 Paris</p>
+                                        </div>
+                                    </div>
+                                    <!-- Articles -->
+                                    <div class="invoice-doc-overflow">
+                                        <table class="table table-zebra">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Description</th>
+                                                    <th>Quantité</th>
+                                                    <th>Prix Unitaire</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                   <td>1</td>
+                                                   <td>Hébergement Web Professionnel</td>
+                                                   <td>1</td>
+                                                   <td>130,00 €</td>
+                                                   <td>130,00 €</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Nom de domaine : .fr</td>
+                                                    <td>5</td>
+                                                    <td>20,00 €</td>
+                                                    <td>100,00 €</td>
+                                                 </tr>
+                                                 <tr>
+                                                    <td>3</td>
+                                                    <td>Serveur Web</td>
+                                                    <td>1</td>
+                                                    <td>1500,00 €</td>
+                                                    <td>1500,00 €</td>
+                                                 </tr>
+                                            </tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="invoice-total">
+                                        <div class="invoice-total-info">
+                                            <div class="font-bold">Total Hors Taxes</div>
+                                            <div>1730,00 €</div>
+                                        </div>
+                                        <div class="invoice-total-info">
+                                            <div class="font-bold">TVA 0 %</div>
+                                            <div>0,00 €</div>
+                                        </div>
+                                        <div class="invoice-total-info">
+                                            <div class="font-bold">Total Toutes Taxes Comprises</div>
+                                            <div class="badge badge-accent">1730,00 €</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            © 2025 Design réalisé par Dakin Quelia.
+        </footer>
+    </div>
+    <script src="../assets/javascripts/admin.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>

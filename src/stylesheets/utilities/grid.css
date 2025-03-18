@@ -1,0 +1,24 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : utilities/grid.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@utility grid-template-areas-* {
+    grid-template-areas: --value([*]);
+}
+
+@utility grid-area-* {
+    grid-area: --value([*]);
+}
+
+/*
+@utility grid-col-* {
+    grid-template-columns: --value([*]);
+}
+
+@utility grid-rows-* {
+    grid-template-rows: --value([*]);
+}
+*/

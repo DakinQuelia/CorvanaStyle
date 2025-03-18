@@ -1,0 +1,65 @@
+
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/alert.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.alert {
+    @apply flex rounded-md py-3 border-1 my-[10px];
+
+    &:first-child {
+        @apply my-0;
+    }
+
+    & span {
+        @apply flex items-center;
+    }
+
+    & [class^="icon-"],
+    & ion-icon,
+    & i {
+        @apply text-3xl ml-4 mr-4;
+    } 
+
+    & p {
+        @apply mx-4;
+    }
+
+    & span ~ p {
+        @apply ml-0 mr-4;
+    }
+
+    &.error,
+    &.red {
+        @apply bg-red-100/70 text-red-600 border-red-600/30;
+    }
+
+    &.warning,
+    &.orange {
+        @apply bg-orange-100/70 text-orange-600  border-orange-600/30;
+    }
+
+    &.success,
+    &.green {
+        @apply bg-green-100/70 text-green-600 border-green-600/30;
+    }
+
+    &.info,
+    &.blue {
+        @apply bg-blue-100/70 text-blue-600 border-blue-600/30;
+    }
+
+    &.violet {
+        @apply bg-violet-100/70 text-violet-600 border-violet-600/30;
+    }
+
+    &.yellow {
+        @apply bg-yellow-100/70 text-yellow-600 border-yellow-600/30;
+    }
+
+    &.pink {
+        @apply bg-pink-100/70 text-pink-600 border-pink-600/30;
+    }
+}

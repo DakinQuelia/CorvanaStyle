@@ -1,0 +1,253 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : layouts/invoice.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.invoice-page {
+    @apply antialiased dark:text-white;
+}
+
+.invoice-page .invoice-content .row {
+    @apply mb-3;
+}
+
+.invoice-preview {
+    @apply border-[#CCCCCC] border-2 border-dashed rounded-xl p-5 mt-4 hidden lg:block;
+}
+
+.invoice-page .text-accent {
+    @apply text-accent-content;
+}
+
+.invoice-col {
+    @apply flex flex-col;
+}
+
+/**
+*   Logo
+**/
+.invoice-logo-wrapper {
+    @apply flex items-center select-none;
+}
+
+.invoice-logo {
+    @apply bg-accent-content rounded-full p-2 flex items-center justify-center;
+
+    & img,
+    & ion-icon,
+    & [class^="icon-"],
+    & i {
+        @apply h-6 w-6;
+    }
+}
+
+.invoice-logo-wrapper .logo-text {
+    @apply ml-3 font-bold text-3xl italic;
+}
+
+/**
+*   Navigation
+**/
+.invoice-page .navbar {
+
+}
+
+.invoice-page .invoice-toolbar {
+    @apply flex flex-col md:flex-row md:justify-between md:items-center mb-4;
+}
+
+.invoice-page .invoice-toolbar .toolbar {
+    @apply flex flex-col md:flex-row md:mt-0 mt-4 gap-2;
+
+    & button {
+        @apply cursor-pointer rounded-[7px] flex items-center bg-primary dark:bg-gray-600 px-3 py-1 font-semibold text-white hover:bg-hover;
+    }
+
+    & select {
+        @apply cursor-pointer bg-white rounded-[7px] border-solid border-[#CCCCCC] border-1 px-3 min-w-[120px] dark:text-black;
+    }
+}
+
+/**
+*   Contenu
+**/
+.invoice-page .invoice-content {
+
+    & .page-title {
+        @apply text-2xl font-bold mb-2;
+    }
+
+    & .page-desc {
+        @apply mb-6;
+    }
+}
+
+.invoice-page .invoice-blocks {
+    @apply flex flex-col md:flex-row w-full mb-3;
+}
+
+.invoice-page .invoice-blocks .invoice-block-col-1 {
+    @apply flex w-full md:w-1/4 flex-col;
+}
+
+.invoice-page .invoice-blocks .invoice-block-col-2 {
+    @apply flex w-full md:w-3/4 flex-col md:ml-4;
+}
+
+.invoice-page .invoice-blocks .totals {
+    @apply mb-4 bg-gray-1200 dark:bg-gray-800 rounded-xl p-5 shadow-md;
+}
+
+.invoice-page .invoice-blocks .header {
+    @apply flex justify-between items-center mb-4;
+}
+
+.invoice-page .invoice-blocks .totals .total {
+    @apply flex justify-between;
+
+    &.bold {
+        @apply font-bold;
+    }
+
+    &:last-child {
+        @apply mt-3;
+    }
+}
+
+.invoice-page .invoice-blocks .invoice-block {
+    @apply mb-4 bg-gray-1200 dark:bg-gray-800 rounded-xl p-5 shadow-md;
+}
+
+.invoice-page .invoice-blocks .invoice-block input {
+    @apply w-full bg-white;
+}
+
+.invoice-page .invoice-blocks .invoice-block table {
+    @apply text-left p-4;
+}
+
+.invoice-page .invoice-blocks .invoice-block table tr:first-child {
+    @apply mt-2;
+}
+
+.invoice-page .invoice-blocks .invoice-block table td {
+    @apply p-[5px];
+}
+
+.invoice-page .invoice-blocks .invoice-block table th:not(:nth-child(4)) {
+    @apply pl-[5px];
+}
+
+.invoice-page .invoice-blocks .invoice-block table th:nth-child(4),
+.invoice-page .invoice-blocks .invoice-block table td:nth-child(4) {
+    @apply ml-auto text-right;
+}
+
+.invoice-page .invoice-blocks .invoice-block table th:nth-child(5),
+.invoice-page .invoice-blocks .invoice-block table td:nth-child(5) {
+    @apply ml-auto text-right flex justify-end;
+}
+
+.invoice-page .invoice-blocks .invoice-block table button {
+    @apply cursor-pointer flex items-center justify-center w-[32px] h-[32px] rounded-full bg-primary text-white hover:bg-hover p-1 dark:bg-gray-600;
+}
+
+.invoice-page .invoice-blocks .invoice-block table .price {
+    @apply font-bold;
+}
+
+/**
+*   Document : facture
+**/
+.invoice-doc {
+    @apply select-none p-8;
+}
+
+.invoice-doc-header {
+    @apply flex justify-between items-center text-sm;
+}
+
+.invoice-doc-header .title {
+    @apply text-7xl font-bold uppercase;
+}
+
+.invoice-doc-overflow {
+    @apply overflow-x-auto;
+}
+
+.invoice-infos {
+    @apply my-6 flex justify-between;
+}
+
+.invoice-sender,
+.invoice-client {
+    & .header {
+        @apply flex items-center justify-center rounded-full py-1 px-4 bg-gray-1300 text-black;
+    }
+
+    & .invoice-name {
+        @apply text-sm font-bold italic dark:text-white;
+    }
+
+    & .invoice-text {
+        @apply text-sm text-gray-500 w-52 break-words dark:text-white;
+    }
+}
+
+.invoice-client {
+    @apply text-right;
+
+    & .header {
+        @apply text-right justify-end!;
+    }
+}
+
+.invoice-total {
+    @apply mt-6 space-y-2 font-medium;
+}
+
+.invoice-total-info {
+    @apply flex justify-between;
+}
+
+.invoice-doc table {
+    @apply w-full;
+}
+
+.invoice-doc table thead th {
+    @apply border-b border-gray-200 pb-2;
+}
+
+.invoice-doc table th {
+    @apply text-left;
+}
+
+.invoice-doc table tr {
+    @apply even:bg-gray-200 even:rounded-md dark:even:bg-gray-800;
+}
+
+.invoice-doc table tr td:nth-child(1) {
+    @apply pl-1;
+}
+
+.invoice-doc table tr td:nth-child(5) {
+    @apply pr-1;
+}
+
+.invoice-doc table tr td {
+    @apply py-2;
+}
+
+.invoice-doc table th:nth-child(3),
+.invoice-doc table td:nth-child(3) {
+    @apply text-center;
+}
+
+.invoice-doc table th:nth-child(4),
+.invoice-doc table td:nth-child(4),
+.invoice-doc table th:nth-child(5),
+.invoice-doc table td:nth-child(5) {
+    @apply text-right;
+}

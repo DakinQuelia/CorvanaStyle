@@ -1,0 +1,414 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : layouts/base.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.base {
+    @apply bg-white dark:bg-gray-700 flex w-full min-h-screen flex-col dark:text-white;
+}
+
+.base .box-shadow {
+    @apply shadow-[5px_5px_20px_8px_rgb(86,128,208/5%)];
+}
+
+.base .container {
+    @apply md:mx-auto;
+}
+
+.base .page {
+    @apply relative z-10 overflow-hidden pb-[100px];
+}
+
+.base .main {
+    @apply flex-1;
+
+    & h1 {
+        @apply text-center;
+    }
+}
+
+.base .block-wrapper {
+    @apply grid grid-cols-12 gap-[30px];
+
+    & .item {
+        @apply col-span-4;
+    }
+
+    & .item .block-box {
+        @apply shadow-sm rounded-xl bg-white dark:bg-gray-800 px-[30px] py-[40px] text-center dark:text-white;
+
+        & div p {
+            @apply mt-[10px] text-left;
+        }
+    }
+
+    & .item .block-box .icon-box {
+        @apply mx-auto mb-4 flex h-[80px] w-[80px] items-center justify-center rounded-full;
+
+        & [class^="icon-"],
+        & ion-icon,
+        & i {
+            @apply text-[30px];
+        }
+    }
+
+    & .item .title {
+        @apply mb-2 text-[22px] font-semibold text-black dark:text-white;
+    }
+}
+
+.base h1 {
+    @apply text-4xl font-bold mb-4;
+}
+
+.base h2 {
+    @apply text-3xl font-bold mb-4;
+}
+
+.readmore {
+    @apply mt-5 flex items-center gap-[10px] text-p transition-all duration-300 hover:text-theme dark:text-white dark:hover:text-gray-600;
+
+    & [class^="icon-"],
+    & ion-icon,
+    & i {
+        @apply block;
+    }
+
+    & span {
+        @apply text-[18px] font-semibold;
+    }
+}
+
+/**
+*   En-tête
+**/
+.base .page .header {
+    @apply flex items-center justify-between py-10;
+}
+
+.base .page .header .logo { 
+    @apply text-2xl;
+}
+
+/**
+*   Pied de page
+**/
+.foot {
+    @apply relative mt-[60px] mb-0 bg-[#192132] text-white dark:bg-gray-800 dark:text-white;
+}
+
+.foot .logo {
+    @apply mb-[15px] text-2xl;
+}
+
+.foot .container {
+    @apply relative;
+}
+
+.foot .footer {
+    @apply grid grid-cols-12 gap-[30px] px-0 py-[60px];
+}
+
+.foot .footer .socials {
+    @apply mt-[30px] flex gap-[20px];
+
+    & a i,
+    & a [class^="icon-"],
+    & a ion-icon {
+        @apply text-[26px] transition-all duration-300 hover:text-theme dark:hover:text-gray-500;
+    }
+}
+
+.foot .footer .col-full {
+    @apply col-span-12;
+}
+
+.foot .footer .col {
+    @apply col-span-4;
+}
+
+.foot .footer .col-2 {
+    @apply col-span-2;
+}
+
+.foot .footer .col-3 {
+    @apply col-span-3;
+}
+
+.foot .footer .col-2 h5 {
+    @apply font-semibold tracking-[1px] text-white;
+}
+
+.foot .footer .col-2 ul {
+    @apply mt-6 grid list-none gap-[12px];
+
+    & li a {
+        @apply flex items-center text-white duration-300 ease-in-out hover:text-theme dark:hover:text-gray-500;
+    }
+
+    & li a [class^="icon-"],
+    & li a ion-icon,
+    & li a i {
+        @apply text-[18px] pr-[10px] items-center;
+    }
+}
+
+.foot .footer .col-3 .newsletter-form {
+    @apply flex flex-col;
+}
+
+.foot .footer .col-3 .newsletter-form .newsletter-send {
+    @apply flex items-center;
+
+    & i,
+    & ion-icon,
+    & svg {
+        @apply top-[unset] py-[2px];
+    }
+} 
+
+/* my-1 flex items-center gap-[10px] */
+
+.foot .footer .col-3 .newsletter-form .field {
+    @apply mt-2 gap-[10px];
+
+    & [class^="icon-"],
+    & ion-icon,
+    & i {
+        @apply absolute start-3 h-5 w-5 top-2 text-white;
+    }
+
+    & input {
+        @apply w-full h-10 rounded-md border-0 bg-gray-800 dark:bg-gray-600 px-3 py-2 ps-12 text-gray-100 focus:shadow-none focus:right-0;
+    }
+}
+
+.foot .footer .col-3 .newsletter-form .button {
+    @apply relative flex items-center justify-center w-[40px] h-[40px] rounded-lg bg-theme dark:bg-gray-600 p-[5px] font-medium text-white transition-all duration-300 hover:bg-hover dark:hover:bg-gray-400;
+}
+
+.foot .footer .col-3 label {
+    @apply text-white;
+}
+
+.foot .footer .description {
+    @apply mt-6 text-justify;
+}
+
+.foot .footer .copyright {
+    @apply mt-10 mb-0;
+}
+
+/**
+*   Navigation du menu
+**/
+.base .page .header nav ul {
+    @apply flex items-center gap-5;
+}
+
+.base .page .header nav .navlink {
+    @apply cursor-pointer px-2 py-5 text-base font-medium transition-all duration-300 hover:text-theme dark:text-white;
+
+    &.active,
+    &:hover {
+        @apply text-hover dark:text-gray-400;
+    }
+}
+
+.base .page .header .nav-right {
+    @apply flex gap-5 items-center;
+}
+
+.base .page .header .login {
+    @apply inline-flex px-[20px] py-[5px] font-medium transition-all duration-300 text-black dark:text-white hover:text-theme dark:hover:text-gray-400;
+}
+
+.base .page .header .register {
+    @apply h-[32px] inline-flex rounded-lg bg-theme dark:bg-gray-800 px-[20px] py-[5px] pt-[2px] text-center font-medium text-white transition-all duration-300 hover:bg-hover dark:hover:bg-gray-600;
+}
+
+/**
+*   Bannière centrale
+**/
+.base .page .hero {
+    @apply container md:mx-auto pt-[120px];
+}
+
+.base .page .hero .wrapper {
+    @apply grid grid-cols-12 gap-[30px];
+}
+
+.base .page .hero .wrapper .title {
+    @apply text-[60px] font-bold leading-[70px];
+}
+
+.base .page .hero .wrapper .title-shape {
+    @apply text-theme dark:text-white;
+}
+
+.base .page .hero .wrapper  .description {
+    @apply mt-[30px] text-base text-p;
+}
+
+.base .page .hero .wrapper .trial {
+    @apply mt-[30px] flex items-center gap-[20px];
+}
+
+.base .page .hero .wrapper .trial a {
+    @apply dark:text-white!;
+
+    & [class^="icon-"],
+    & ion-icon,
+    & i {
+        @apply text-2xl mr-1;
+    }
+}
+    
+.base .page .hero .wrapper .trial a.link {
+    @apply flex items-center rounded-full bg-theme px-[26px] py-[16px] font-semibold text-white transition-all duration-300 hover:bg-hover dark:bg-gray-800 dark:hover:bg-gray-600;
+}
+
+.base .page .hero .wrapper .trial a.view {
+    @apply flex items-center gap-3 rounded-full px-0 py-[16px] font-semibold text-p text-lg transition-all duration-300 hover:text-theme dark:hover:text-gray-400!;
+}
+
+.base .page .hero .wrapper .col-1,
+.base .page .hero .wrapper .col-2 {
+    @apply col-span-6;
+}
+
+.base .page .hero .wrapper .col-2 img {
+    @apply rounded-xl;
+}
+
+/**
+*   Contenu
+**/
+.clients {
+    @apply mt-[100px] text-center;
+}
+
+.clients h2 {
+    @apply text-[50px] font-bold;
+}
+
+.clients p {
+    @apply text-base text-p;
+}
+
+.clients .logos {
+    @apply mt-[30px];
+}
+
+.clients .logos ul {
+    @apply flex items-center justify-center gap-[150px];
+}
+
+.clients .logos ul li {
+    @apply w-[120px] h-[120px];
+}
+
+.support {
+    @apply bg-white dark:bg-gray-700 pt-[100px];
+}
+
+.support .col-1 {
+    @apply w-1/2;
+}
+
+.support h2 {
+    @apply text-[40px] font-bold leading-[50px];
+}
+
+.support .col-1 p {
+    @apply mt-[20px] text-p;
+}
+
+.support .infos {
+    @apply mt-[0] grid grid-cols-12 gap-[30px];
+}
+
+.support .infos .box {
+    @apply shadow-sm rounded-xl bg-white p-[30px];
+}
+
+.support .infos h2 {
+    @apply text-[26px] font-semibold text-black;
+}
+
+.support .infos p {
+    @apply mt-2 text-base text-p;
+}
+
+/**
+*   Blog
+**/ 
+.blog {
+    @apply pb-[120px];
+}
+
+.blog h2 {
+    @apply text-[40px] font-bold leading-[50px];
+}
+
+.blog p {
+    @apply mt-5 mb-4 text-p;
+}
+
+.blog .items {
+    @apply mt-12 grid grid-cols-12 gap-[30px];
+
+    & p {
+        @apply mt-5 text-p mb-0;
+    }
+
+    & h4 {
+        @apply mt-1 text-[26px] font-bold text-black transition-all duration-300 hover:text-theme;
+    }
+
+    & img {
+        @apply rounded-lg;
+    }
+
+    & .item {
+        @apply col-span-4;
+    }
+}
+
+.blog .pill {
+    @apply absolute top-3 bg-theme ps-3 pe-6 py-1 text-sm font-semibold text-white;
+
+    clip-path: polygon(0% 0%, 100% 0, 90% 49%, 100% 99%, 0% 100%);
+
+    &.round {
+        @apply rounded-sm;
+    }
+
+    &.important {
+        @apply bg-red-800;
+    }
+}
+
+/**
+*   Formulaire de contact
+**/
+.contact {
+    @apply w-[70%] mx-auto pb-[100px];
+
+    & h2 {
+        @apply text-2xl font-bold mb-4; 
+    }
+
+    & p {
+        @apply text-left;
+    }
+}
+
+/**
+*
+**/
+.services {
+    @apply mt-[100px];
+}

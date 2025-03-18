@@ -1,0 +1,14 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : utilities/global.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@utility initial {
+   display: initial;
+}
+
+@utility unset {
+   display: unset;
+}

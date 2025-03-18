@@ -1,0 +1,286 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : layouts/admin.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+/**
+*   Global
+**/
+.admin-page {
+    @apply min-h-screen overflow-x-hidden flex flex-col dark:bg-gray-700;
+}
+
+.admin-page .container {
+    @apply w-full relative max-w-[calc(100%-340px)] min-h-screen flex flex-col;
+
+    &.active {
+        @apply max-w-[calc(100%-20px)];
+    }
+}
+
+.admin-page footer {
+    @apply absolute left-[320px] flex bottom-0 mt-3! mb-3 dark:text-white select-none;
+
+    &.active {
+        @apply w-[calc(100%-80px)] left-[100px];
+    }
+}
+
+/**
+*   Menu latéral
+**/
+.admin-page .navigation {
+    @apply fixed w-[300px] flex flex-col h-full bg-theme border-l-theme dark:bg-gray-800 dark:border-l-gray-800 border-l-10 transition duration-300 overflow-hidden;
+
+    &.active {
+        @apply w-[80px];
+    }
+}
+
+.admin-page .navigation a {
+    @apply no-underline;
+}
+
+.admin-page .navigation ul {
+    @apply absolute top-0 left-0 w-full flex flex-col flex-1;
+}
+
+.admin-page .navigation .user-links {
+    
+}
+
+.admin-page .navigation ul li {
+    @apply relative w-full list-none rounded-l-[30px];
+
+    &:hover,
+    &.hovered {
+        @apply bg-white dark:bg-gray-700;
+    }
+}
+
+.admin-page .navigation ul li:nth-child(1) {
+    @apply mb-10 pointer-events-none font-bold;
+}
+
+.admin-page .navigation ul li:not(:nth-last-child(2)) {
+    @apply flex-1;
+}
+
+.admin-page .navigation ul li a {
+    @apply text-white w-full flex no-underline items-center;
+
+    &:hover {
+        @apply text-theme dark:text-white;
+    }
+}
+
+.admin-page .navigation ul li:hover a,
+.admin-page .navigation ul li.hovered a {
+    @apply text-theme dark:text-white;
+
+    @variant dark {
+        @apply before:shadow-(--shadow-dark-nav-before) after:shadow-(--shadow-dark-nav-after);
+    }
+}
+
+.admin-page .navigation ul li:hover a::before,
+.admin-page .navigation ul li.hovered a::before {
+    @apply content-[''] absolute right-0 top-[-50px] w-[50px] h-[50px] bg-transparent rounded-[50%] pointer-events-none shadow-(--shadow-nav-before) shadow-white;
+}
+
+.admin-page .navigation ul li:hover a::after,
+.admin-page .navigation ul li.hovered a::after {
+    @apply content-[''] absolute right-0 bottom-[-50px] w-[50px] h-[50px] bg-transparent rounded-[50%] pointer-events-none shadow-(--shadow-nav-after)  shadow-white ;
+}
+
+.admin-page.dark .navigation ul li:hover a::before,
+.admin-page.dark .navigation ul li.hovered a::before {
+    box-shadow: var(--shadow-dark-nav-before);
+}
+
+
+.admin-page.dark .navigation ul li:hover a::after,
+.admin-page.dark .navigation ul li.hovered a::after {
+    box-shadow: var(--shadow-dark-nav-after);
+}
+
+.admin-page .navigation ul li a .icon {
+    @apply relative block min-w-15 h-[60px] leading-[75px] text-center;
+}
+
+.admin-page .navigation ul li a .icon ion-icon,
+.admin-page .navigation ul li a .icon [class^="icon-"] {
+    @apply text-[1.75rem];
+}
+
+.admin-page .navigation ul li a .title {
+    @apply relative block px-[10px] h-[60px] leading-[60px] text-start whitespace-nowrap;
+}
+
+/**
+*   Contenu principal
+**/
+.admin-page .page-content {
+    @apply relative w-full max-w-[100%] grow-1 left-[320px] min-h-screen bg-white dark:bg-gray-700 transition duration-300 p-[20px] ;
+
+    &.active {
+        @apply w-[calc(100%-100px)] left-[100px];
+    }
+}
+
+.admin-page .page-content .topbar {
+    @apply w-full flex h-[60px] justify-between items-center px-[10px] -mx-[20px] -mt-[20px];
+}
+
+.admin-page .page-content .topbar .toggle {
+    @apply relative w-[60px] h-[60px] flex justify-center items-center text-4xl text-black dark:text-white cursor-pointer;
+}
+
+.admin-page .page-content .topbar .search {
+    @apply relative w-[400px] mx-[10px] text-black ;
+}
+
+.admin-page .page-content .topbar .search label {
+    @apply relative w-full;
+}
+
+.admin-page .page-content .topbar .search label input {
+    @apply w-full h-[40px] rounded-[40px] text-lg p-[5px_20px_5px_35px] outline-none border-1 border-[#CCCCCC] border-solid;
+}
+
+.admin-page .page-content .topbar .search label ion-icon,
+.admin-page .page-content .topbar .search label [class^="icon-"] {
+    @apply absolute top-0 left-[10px] text-lg;
+}
+
+.admin-page .page-content .topbar .user {
+    @apply relative w-[40px] h-[40px] rounded-[50%] overflow-hidden cursor-pointer;
+}
+
+.admin-page .page-content .topbar .user img {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+}
+
+/**
+*   Cartes
+**/
+.admin-page .card-box {
+    @apply relative w-full flex justify-between gap-[30px];
+}
+
+.admin-page .card-box .card {
+    @apply relative bg-white dark:dark:bg-gray-800 p-[30px] shadow-md rounded-[20px] flex justify-between cursor-pointer;
+
+    &:hover {
+        @apply bg-theme dark:bg-gray-600;
+    }
+
+    &:hover .numbers,
+    &:hover .name,
+    &:hover .icon-box {
+        @apply text-white;
+    }
+}
+
+.admin-page .card-box .card .icon-box {
+    @apply text-5xl text-[#999999];
+}
+
+.admin-page .card-box .card .numbers {
+    @apply relative font-medium text-4xl text-theme dark:text-white;
+}
+
+.admin-page .card-box .card .name {
+    @apply text-lg text-[#999999] mt-[5px];
+}
+
+.admin-page .item-block {
+    @apply flex w-full bg-white dark:bg-gray-800 p-[20px] shadow-md rounded-[20px];
+}
+
+.admin-page .items {
+    @apply relative w-full flex gap-[30px] mt-[10px];
+}
+
+.admin-page .recent-orders,
+.admin-page .recent-customers {
+    @apply relative grid bg-white dark:bg-gray-800 p-[20px] shadow-md rounded-[20px];
+}
+
+.admin-page .items .card-header {
+    @apply flex justify-between items-start;
+}
+
+.admin-page .items .card-header h2 {
+    @apply text-2xl font-bold text-theme dark:text-white;
+}
+
+.admin-page .items .card-header .button {
+    @apply relative p-[5px_10px] bg-theme dark:bg-gray-700 no-underline text-white rounded-[6px];
+
+    &:hover {
+        @apply dark:bg-gray-600;
+    }
+}
+
+.admin-page .items table {
+    @apply w-full mt-[20px] border-collapse;
+}
+
+.admin-page .items thead td {
+    @apply font-semibold;
+}
+
+.admin-page .items .recent-orders table tr {
+    @apply text-black dark:text-white border-b-1 border-solid border-b-[rgba(0,0,0,0.1)];
+}
+
+.admin-page .items .recent-orders table tr:last-child {
+    @apply border-none;
+}
+
+.admin-page .items .recent-orders table tbody tr:hover {
+    @apply bg-(--color-orange-1000) dark:bg-gray-600 text-white rounded-md;
+}
+
+.admin-page .items .recent-orders table tr td {
+    @apply p-[10px] w-[200px];
+}
+
+.admin-page .items .recent-orders table tr td:last-child {
+    @apply text-end;
+}
+
+.admin-page .items .recent-orders table tr td:nth-child(2) {
+    @apply text-end;
+}
+
+.admin-page .items .recent-orders table tr td:nth-child(3) {
+    @apply text-center;
+}
+
+.admin-page .items .recent-orders table tr td:nth-child(4) {
+    @apply text-center;
+}
+
+.admin-page .items .recent-orders .status {
+    @apply inline-block align-middle min-w-[100px] rounded-[4px] p-[2px_4px] font-medium text-center text-sm;
+
+    &.delivered {
+        @apply bg-lime-600 text-white; 
+    }
+
+    &.pending {
+        @apply bg-yellow-500 text-white; 
+    }
+
+    &.return {
+        @apply bg-red-700 text-white; 
+    }
+
+    &.in-progress {
+        @apply bg-blue-1000 text-white;  
+    }
+}

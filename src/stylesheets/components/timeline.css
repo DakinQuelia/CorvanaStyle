@@ -1,0 +1,58 @@
+/**
+*   Style       : Corvana Style 
+*   ---------------------------
+*   Fichier     : components/timeline.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.timeline {
+    @apply m-[0_auto] max-w-[750px] p-[25px] grid /*font-(family-name:--timeline-font)*/ text-black grid-cols-(--timeline-grid-cols) dark:text-white;
+}
+
+.timeline-row {
+    @apply m-0;
+}
+
+.timeline .timeline-component {
+    @apply m-[0_20px_20px_20px];
+
+    &.bg {
+        @apply bg-theme/70 dark:bg-gray-800 text-white p-[1.5em] rounded-[10px] shadow-(--timeline-shadow);
+    }
+
+    &.right {
+        @apply text-right;
+    }
+
+    &.bottom {
+        @apply mb-0;
+    }
+
+    & .timeline-date {
+        @apply mt-[-5px] font-semibold;
+    }
+
+    & .timeline-title {
+        @apply text-2xl font-bold mb-4;
+    }
+
+    & .timeline-content {
+        @apply text-left;
+    }
+
+    & .timeline-text {
+        @apply leading-[1.5];
+    }
+}
+
+.timeline .timeline-middle {
+    @apply relative bg-theme dark:bg-white;
+
+    & .timeline-point {
+        @apply absolute bg-theme dark:bg-white top-0 left-[50%] w-[15px] h-[15px] rounded-[50%] transform-(--timeline-translateX);
+
+        &.bottom {
+            @apply top-[initial] bottom-0 ;
+        }
+    }
+}

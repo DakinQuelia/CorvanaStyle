@@ -1,0 +1,59 @@
+/**
+*   Style       : Corvana Style
+*   --------------------------- 
+*   Fichier     : components/navigation.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+.navigation-curved-wrapper {
+    @apply h-screen w-full border-t-[10px] border-solid border-t-white;
+
+    & .container {
+        @apply w-[90%] max-w-[900px] m-[0_auto];
+    }
+}
+
+.navigation-curved {
+    @apply flex items-center;
+
+    & .logo {
+        @apply hidden relative md:flex items-center text-[30px] w-[400px] max-w-[400px] pl-[20px] top-[5px];
+    }
+
+    & .navbar-widget {
+        @apply relative w-[calc(100%-300px)] h-[52px];
+
+        &::before,
+        &::after {
+            @apply content-[''] absolute top-[-2px] h-[20px] w-[32px] bg-(image:--navigation-curved-gradient) bg-[-11px_-7px] bg-(length:--navigation-curved-size);
+        }
+
+        &::before {
+            @apply left-[-48px];
+
+            transform: rotate(58deg);
+        }
+
+        &::after {
+            @apply right-[-48px];
+
+            transform: rotate(9deg);
+        }
+
+        & .navbar {
+            @apply relative flex items-center justify-center w-full h-full pb-[8px];
+
+            &::before {
+                @apply top-[-46px] content-[''] absolute w-full h-[calc(100%+100px)] bg-white rounded-(--navigation-border-curved) transform-(--navigation-curved-transform) z-[-1];
+            }
+
+            & li {
+
+            }
+
+            & li a {
+                @apply py-[8px] px-[16px] text-black hover:text-theme;
+            }
+        }
+    }
+}

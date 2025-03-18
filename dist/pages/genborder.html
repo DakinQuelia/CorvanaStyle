@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvana Style :: Interface Générateur</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body class="base bg-[#e8e8e8]!">
+    <section class="generator mt-[50px] ml-[50px]">
+        <div class="container">
+            <form action="">
+                <div class="generator-wrapper sm">
+                    <div class="generator-output">
+                        <div id="blob"></div>
+                    </div>
+                    <div class="dimensions">
+                        <div class="field">
+                            <div class="col-left">
+                                <label for="blob-height">Hauteur</label>
+                            </div>
+                            <div class="col-right">
+                                <input type="number" name="blob-height" id="blob-height" value="200" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="col-left">
+                                <label for="blob-width">Largeur</label>
+                            </div>
+                            <div class="col-right">
+                                <input type="number" name="blob-width" id="blob-width" value="200" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="generator-sliders">
+                        <input type="range" name="" id="" value="30" />    
+                        <input type="range" name="" id="" value="80" />    
+                        <input type="range" name="" id="" value="60" />    
+                        <input type="range" name="" id="" value="40" />   
+                    </div>
+                    <div class="generator-result">
+                        <input type="text" name="css-code" id="css-code" readonly />
+                        <button type="button" id="copy">Copier</button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="../assets/javascripts/app.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>

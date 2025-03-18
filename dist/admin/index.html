@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corvana Style :: Administration</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css" />
+</head>
+<body class="admin-page">
+    <div class="container">
+        <aside class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+                        <span class="title">Votre Application (v1.0.0.)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon" title="Aide">
+                            <ion-icon name="help-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Aide</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="./index.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Administration</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./invoice.html">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Paramètres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Statistiques</span>
+                    </a>
+                </li>
+                <!-- Utilisateur -->
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="key-outline"></ion-icon></span>
+                        <span class="title">Mot de passe</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Se déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="page-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" id="search" name="search" placeholder="Rechercher..." />
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="https://picsum.photos/seed/picsum/200/300" alt="Utilisateur" />
+                </div>
+            </div>
+            <!-- Cartes -->
+            <div class="card-box">
+                <div class="card">
+                    <div class="infos">
+                        <div class="numbers">1504</div>
+                        <div class="name">Vues</div>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="infos">
+                        <div class="numbers">80</div>
+                        <div class="name">Ventes</div>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="infos">
+                        <div class="numbers">284</div>
+                        <div class="name">Commentaires</div>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="infos">
+                        <div class="numbers">7 842 €</div>
+                        <div class="name">Gains</div>
+                    </div>
+                    <div class="icon-box">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- Bloques -->
+            <div class="items">
+                <div class="recent-orders">
+                    <div class="card-header">
+                        <h2>Commandes récentes</h2>
+                        <a href="#" class="button">Voir tout</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nom</td>
+                                <td>Prix</td>
+                                <td>Mode de paiement</td>
+                                <td>Statut</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Meuble TV</td>
+                                <td>119,00 €</td>
+                                <td>Bancontact</td>
+                                <td>
+                                    <span class="status delivered">Livré</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salle à manger</td>
+                                <td>550,00 €</td>
+                                <td>Bancontact </td>
+                                <td>
+                                    <span class="status pending">En cours</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lit King Size</td>
+                                <td>890,00 €</td>
+                                <td>Bancontact</td>
+                                <td>
+                                    <span class="status return">Retourné</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Portable ASUS</td>
+                                <td>1190,00 €</td>
+                                <td>Bancontact</td>
+                                <td>
+                                    <span class="status in-progress">En progression</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer>
+            © 2025 par Dakin Quelia.
+        </footer>
+    </div>    
+    <script src="../assets/javascripts/admin.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+</html>
