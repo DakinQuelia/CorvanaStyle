@@ -12,3 +12,15 @@
 @utility unset {
    display: unset;
 }
+
+@utility clip-path-* {
+   clip-path: --value([*]);
+}
+
+@utility font-inherit {
+   font-size: inherit;
+}
+
+@utility color-inherit {
+   color: inherit;
+}

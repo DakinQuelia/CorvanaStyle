@@ -36,6 +36,25 @@
     --paper-grid-image: linear-gradient(to right, #d1d5db 1px, transparent 1px), linear-gradient(to bottom, #d1d5db 1px, transparent 1px);
     --notebook-size: 100% 1.2em;
     --notebook-background: linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .05em, transparent .05em);
+    --polygon-arrow: polygon(0 0, calc(100% - 0.535rem) 0, 100% 50%, calc(100% - 0.535rem) 100%, 0 100%, 0.535rem 50%);
+    --polygon-breadcrumbs-icon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+    /* Clavier */
+    --keyboard-font: Helvetica, Arial, sans-serif;
+    --keyboard-pressed-color: var(--color-theme);
+    --keyboard-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+    --keyboard-button-background: linear-gradient(to bottom, white 0%, #e3e3e3 100%);
+    --keyboard-button-border-color: #AAAAAA;
+    --keyboard-button-pressed-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+    --keyboard-button-pressed-background: linear-gradient(to top, #f3f3f3 0%, #dddddd 100%);
+    --keyboard-triangle-up-border: 0 8px 10px 8px;
+    --keyboard-triangle-up-color: transparent transparent #555555 transparent;
+    --keyboard-triangle-right-border: 8px 0 8px 10px;
+    --keyboard-triangle-right-color: transparent transparent transparent #555555;
+    --keyboard-triangle-down-border: 10px 8px 0 8px;
+    --keyboard-triangle-down-color: #555555 transparent transparent transparent;
+    --keyboard-triangle-left-border: 8px 8px 10px 0;
+    --keyboard-triangle-left-color: transparent #555555 transparent transparent;
 
     /* Boutons */
     --button-download-text-shadow: 1px 1px 1px rgba(0,0,0,0.3);

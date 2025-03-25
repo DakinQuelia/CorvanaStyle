@@ -57,3 +57,40 @@
         }
     }
 }
+
+/**
+*   Navigation : breadcrumbs
+**/
+.breadcrumbs {
+    & ul li:first-child a {
+        @apply block p-0 bg-[#00000000] clip-path-[none];
+    }
+
+    & ul li a {
+        @apply relative flex items-center h-[1.733rem] bg-theme/20 text-[1rem] leading-[1] text-theme pt-0 pr-[1.75rem] pb-0 pl-[1.5rem] lowercase z-50 transition-all duration-150 ease-in clip-path-(--polygon-arrow) outline-none; 
+    }
+
+    & .breadcrumbs-icon-wrapper {
+        @apply relative z-2 outline-none inline-block ;
+
+        &.small {
+            & .breadcrumbs-icon {
+                @apply w-[2rem] text-[.875rem];
+            }  
+        }
+
+        & .breadcrumbs-icon {
+            @apply relative block bg-theme text-white clip-path-(--polygon-breadcrumbs-icon) w-[5.5rem] text-[2.25rem] transition-all duration-250 ease-in;
+
+            &  > svg {
+                @apply block;
+            }
+
+            & span[class*="icon-"] {
+                @apply absolute top-[50%] left-[50%] font-inherit color-inherit;
+
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+}

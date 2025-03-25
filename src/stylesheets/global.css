@@ -95,8 +95,11 @@ a {
 *   Balise Code avec quadrillage
 **/
 .code-responsive-wrapper {
-    background-color: #fff;
+    @apply bg-white;
+
+    /*
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d1d5db' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    */
 }
 
 .paper-grid {
@@ -112,11 +115,168 @@ a {
 }
 
 /**
+*   Clavier
+**/
+.keyboard {
+    @apply select-none leading-[1.4] mb-[2em] font-(family-name:--keyboard-font);
+
+    &::before, 
+    &::after {
+        @apply content-[""] table;
+    }
+
+    &::after {
+        @apply clear-both;
+    }
+
+    & .section {
+        @apply float-left mr-[15px];
+    }
+
+    & .section:last-of-type {
+        @apply mr-0!;
+    }
+
+    & .row {
+        @apply h-[40px] mb-[5px] flex justify-between;
+    }
+
+    & .row:last-of-type {
+        @apply mb-0;
+    }
+
+    & .key,
+    & .key-filler {
+        @apply inline-block relative mr-[5px] w-[40px] h-[40px];
+    }
+
+    & .key:last-of-type, 
+    & .key-filler:last-of-type {
+        @apply mr-0;
+    }
+
+    & .key-filler {
+       @apply pointer-events-none;
+    }
+
+    & .key {
+        @apply relative inline-block mr-[5px] w-[40px] h-[40px] text-[0.70em] bg-(image:--keyboard-button-background) text-center text-[#333333] bg-white border-1 border-(--keyboard-button-border-color) pt-[0.25em] rounded-[5px] shadow-(--keyboard-shadow);
+
+        & em,
+        & strong{
+            @apply font-normal;
+        }
+
+        &.single {
+            @apply text-[1.1em] pt-[0.35em];
+        }
+
+        &.tall {
+            @apply h-[85px] leading-[85px];
+        }
+
+        &.wide-1 {
+            @apply w-[61px];
+        }
+
+        &.wide-2 {
+            @apply w-[64px];
+        }
+
+        &.wide-3 {
+            @apply w-[76px];
+        }
+
+        &.wide-4 {
+            @apply w-[100px];
+        }
+
+        &.wide-5 {
+            @apply w-[274px];
+        }
+
+        &.wide-6 {
+            @apply w-[85px];
+        }
+
+        & span {
+            @apply block absolute w-full py-[0.2em] px-[0.5em] bottom-0 text-[0.90em] text-center;
+        }
+
+        & span.left {
+            @apply text-left;
+        }
+
+        & span.right {
+            @apply text-right;
+        }
+        
+        & .triangle {
+            @apply m-[8px_auto] relative w-0 h-0 border-solid;
+        }
+
+        & .triangle.up {
+            @apply top-[2px] border-(length:--keyboard-triangle-up-border) border-(--keyboard-triangle-up-color);
+        }
+
+        & .triangle.right {
+            @apply left-[2px] border-(length:--keyboard-triangle-right-border) border-(--keyboard-triangle-right-color);
+        }
+
+        & .triangle.down {
+            @apply top-[5px] border-(length:--keyboard-triangle-down-border) border-(--keyboard-triangle-down-color);
+        }
+
+        & .triangle.left {
+            @apply left-[-2px] border-(length:--keyboard-triangle-left-border) border-(--keyboard-triangle-left-color);
+        }
+
+        & br + .triangle {
+            @apply m-[0_auto];
+        }
+    }
+
+    /**
+    *   Touches enfoncées
+    **/
+    & .key.pressed, 
+    & .key.shift-pressed {
+        @apply shadow-(--keyboard-button-pressed-shadow) bg-[#f3f3f3] bg-(image:--keyboard-button-pressed-background);
+    }
+
+    & .key.pressed strong, 
+    & .key.shift-pressed strong {
+        @apply text-theme;
+    }
+    
+    & .key.pressed .triangle:first-child.up, 
+    &.key.shift-pressed .triangle:first-child.up {
+        border-color: transparent transparent var(--keyboard-pressed-color) transparent; 
+    }
+    
+    & .key.pressed .triangle:first-child.down, 
+    & .key.shift-pressed .triangle:first-child.down {
+        border-color: var(--keyboard-pressed-color) transparent transparent transparent; 
+    }
+
+    & .key.pressed .triangle:first-child.right, 
+     .keyboard .key.shift-pressed .triangle:first-child.right {
+        border-color: transparent transparent transparent var(--keyboard-pressed-color); 
+    }
+    
+    & .key.pressed .triangle:first-child.left, 
+    & .key.shift-pressed .triangle:first-child.left {
+        border-color: transparent var(--keyboard-pressed-color) transparent transparent; 
+    }
+
+    & .key.shift-pressed strong {
+        @apply text-[#333333];
+    }
+}
+
+/**
 *   Animations
 **/
 .spin {
-    animation-name: spin;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    @apply animate-spin;
 }
