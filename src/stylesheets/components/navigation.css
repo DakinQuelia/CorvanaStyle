@@ -29,15 +29,11 @@
         }
 
         &::before {
-            @apply left-[-48px];
-
-            transform: rotate(58deg);
+            @apply left-[-48px] transform rotate-[58deg];
         }
 
         &::after {
-            @apply right-[-48px];
-
-            transform: rotate(9deg);
+            @apply right-[-48px] transform rotate-[9deg];
         }
 
         & .navbar {
@@ -47,9 +43,7 @@
                 @apply top-[-46px] content-[''] absolute w-full h-[calc(100%+100px)] bg-white rounded-(--navigation-border-curved) transform-(--navigation-curved-transform) z-[-1];
             }
 
-            & li {
-
-            }
+            & li { }
 
             & li a {
                 @apply py-[8px] px-[16px] text-black hover:text-theme;
@@ -62,12 +56,41 @@
 *   Navigation : breadcrumbs
 **/
 .breadcrumbs {
-    & ul li:first-child a {
-        @apply block p-0 bg-[#00000000] clip-path-[none];
+    @apply w-full;
+
+    & ul {
+        @apply flex;
     }
 
-    & ul li a {
-        @apply relative flex items-center h-[1.733rem] bg-theme/20 text-[1rem] leading-[1] text-theme pt-0 pr-[1.75rem] pb-0 pl-[1.5rem] lowercase z-50 transition-all duration-150 ease-in clip-path-(--polygon-arrow) outline-none; 
+    & ul li:first-child {
+        @apply m-0 p-0;
+
+        & a {
+            @apply block p-0 bg-[#00000000] clip-path-[none];
+        }
+
+        & a:hover {
+            @apply dark:bg-dark-theme;
+
+            & .breadcrumbs-icon {
+                @apply bg-theme/70 dark:bg-gray-500 dark:text-dark-p;
+            }
+        }
+    }
+
+    & ul li {
+        @apply m-[0_0_0_-0.25rem] p-0 list-none;
+
+        & a {
+            @apply relative flex items-center h-[1.733rem] bg-theme/10 text-theme/70 text-[1rem] leading-[1] pt-0 pr-[1.75rem] pb-0 pl-[1.5rem] lowercase z-50 transition-all duration-150 ease-in clip-path-(--polygon-arrow) outline-none dark:bg-gray-600 dark:text-dark-p/70; 
+        }
+
+        &:hover:not(&:first-child),
+        &.active:not(&:first-child) {
+            & a {
+                @apply bg-theme/30 text-theme dark:bg-gray-500 dark:text-dark-p;
+            }
+        }
     }
 
     & .breadcrumbs-icon-wrapper {
@@ -80,16 +103,14 @@
         }
 
         & .breadcrumbs-icon {
-            @apply relative block bg-theme text-white clip-path-(--polygon-breadcrumbs-icon) w-[5.5rem] text-[2.25rem] transition-all duration-250 ease-in;
+            @apply relative block bg-theme text-white clip-path-(--polygon-breadcrumbs-icon) w-[5.5rem] text-[2.25rem] transition-all duration-250 ease-in dark:bg-gray-800;
 
             &  > svg {
                 @apply block;
             }
 
             & span[class*="icon-"] {
-                @apply absolute top-[50%] left-[50%] font-inherit color-inherit;
-
-                transform: translateX(-50%) translateY(-50%);
+                @apply absolute top-[50%] left-[50%] font-inherit color-inherit transform translate-x-[-50%] translate-y-[-50%];
             }
         }
     }

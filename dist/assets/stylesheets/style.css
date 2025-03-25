@@ -1616,11 +1616,13 @@ a {
     }
     &::before {
       left: -48px;
-      transform: rotate(58deg);
+      rotate: 58deg;
+      transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
     }
     &::after {
       right: -48px;
-      transform: rotate(9deg);
+      rotate: 9deg;
+      transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
     }
     & .navbar {
       position: relative;
@@ -1656,38 +1658,83 @@ a {
   }
 }
 .breadcrumbs {
-  & ul li:first-child a {
-    display: block;
-    background-color: #00000000;
-    padding: calc(var(--spacing) * 0);
-    clip-path: none;
-  }
-  & ul li a {
-    position: relative;
-    z-index: 50;
+  width: 100%;
+  & ul {
     display: flex;
-    height: 1.733rem;
-    align-items: center;
-    background-color: color-mix(in oklab, var(--color-theme) 20%, transparent);
-    padding-top: calc(var(--spacing) * 0);
-    padding-right: 1.75rem;
-    padding-bottom: calc(var(--spacing) * 0);
-    padding-left: 1.5rem;
-    font-size: 1rem;
-    --tw-leading: 1;
-    line-height: 1;
-    color: var(--color-theme);
-    text-transform: lowercase;
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 150ms;
-    transition-duration: 150ms;
-    --tw-ease: var(--ease-in);
-    transition-timing-function: var(--ease-in);
-    clip-path: var(--polygon-arrow);
-    --tw-outline-style: none;
-    outline-style: none;
+  }
+  & ul li:first-child {
+    margin: calc(var(--spacing) * 0);
+    padding: calc(var(--spacing) * 0);
+    & a {
+      display: block;
+      background-color: #00000000;
+      padding: calc(var(--spacing) * 0);
+      clip-path: none;
+    }
+    & a:hover {
+      &:where(.dark, .dark *) {
+        background-color: var(--color-dark-theme);
+      }
+      & .breadcrumbs-icon {
+        background-color: color-mix(in oklab, var(--color-theme) 70%, transparent);
+        &:where(.dark, .dark *) {
+          background-color: var(--color-gray-500);
+        }
+        &:where(.dark, .dark *) {
+          color: var(--color-dark-p);
+        }
+      }
+    }
+  }
+  & ul li {
+    margin: 0 0 0 -0.25rem;
+    list-style-type: none;
+    padding: calc(var(--spacing) * 0);
+    & a {
+      position: relative;
+      z-index: 50;
+      display: flex;
+      height: 1.733rem;
+      align-items: center;
+      background-color: color-mix(in oklab, var(--color-theme) 10%, transparent);
+      padding-top: calc(var(--spacing) * 0);
+      padding-right: 1.75rem;
+      padding-bottom: calc(var(--spacing) * 0);
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      --tw-leading: 1;
+      line-height: 1;
+      color: color-mix(in oklab, var(--color-theme) 70%, transparent);
+      text-transform: lowercase;
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+      --tw-duration: 150ms;
+      transition-duration: 150ms;
+      --tw-ease: var(--ease-in);
+      transition-timing-function: var(--ease-in);
+      clip-path: var(--polygon-arrow);
+      --tw-outline-style: none;
+      outline-style: none;
+      &:where(.dark, .dark *) {
+        background-color: var(--color-gray-600);
+      }
+      &:where(.dark, .dark *) {
+        color: color-mix(in oklab, var(--color-dark-p) 70%, transparent);
+      }
+    }
+    &:hover:not(&:first-child), &.active:not(&:first-child) {
+      & a {
+        background-color: color-mix(in oklab, var(--color-theme) 30%, transparent);
+        color: var(--color-theme);
+        &:where(.dark, .dark *) {
+          background-color: var(--color-gray-500);
+        }
+        &:where(.dark, .dark *) {
+          color: var(--color-dark-p);
+        }
+      }
+    }
   }
   & .breadcrumbs-icon-wrapper {
     position: relative;
@@ -1716,6 +1763,9 @@ a {
       --tw-ease: var(--ease-in);
       transition-timing-function: var(--ease-in);
       clip-path: var(--polygon-breadcrumbs-icon);
+      &:where(.dark, .dark *) {
+        background-color: var(--color-gray-800);
+      }
       & > svg {
         display: block;
       }
@@ -1723,9 +1773,13 @@ a {
         position: absolute;
         top: 50%;
         left: 50%;
+        --tw-translate-x: -50%;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+        --tw-translate-y: -50%;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+        transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
         font-size: inherit;
         color: inherit;
-        transform: translateX(-50%) translateY(-50%);
       }
     }
   }
